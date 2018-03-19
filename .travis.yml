@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - "6.9"
+
+branches:
+  only:
+    - dev
+
+before_install:
+  - chmod +x deploy.sh
+
+before_script:
+  - npm install -g --silent @angular/cli
+
+script:
+  - ng lint
+  - ng build --prod --aot --no-progress
+
+after_success:
+  -  ./deploy.sh FTP_USER=$FTP_USER FTP_PASS=$FTP_PASS
+
+cache:
+  directories:
+    - node_modules
