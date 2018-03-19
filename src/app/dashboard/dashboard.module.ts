@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { DashboardRoutingModule } from './dashboard-routing.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    DashboardRoutingModule
+  ],
+  declarations: [
+
+  ],
+  providers: [
+
+  ],
+  exports: [
+
+  ]
+})
+export class DashboardModule { }
