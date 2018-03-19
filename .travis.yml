@@ -4,12 +4,10 @@ node_js:
 
 branches:
   only:
-    - dev
-
-before_install:
-  - chmod +x deploy.sh
+    - master
 
 before_script:
+  - npm install -g --silent firebase-tools
   - npm install -g --silent @angular/cli
 
 script:
@@ -17,7 +15,7 @@ script:
   - ng build --prod --aot --no-progress
 
 after_success:
-  -  ./deploy.sh FTP_USER=$FTP_USER FTP_PASS=$FTP_PASS
+  - firebase deploy --token $FIREBASE_TOKEN
 
 cache:
   directories:
