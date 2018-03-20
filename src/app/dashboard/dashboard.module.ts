@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 import { DashboardRoutingModule } from '@dashboard/dashboard-routing.module';
 
 import { RankingIndexContainerComponent } from '@dashboard/containers/ranking-index-container/ranking-index-container.component';
@@ -8,7 +10,9 @@ import { RankingIndexContainerComponent } from '@dashboard/containers/ranking-in
 @NgModule({
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   declarations: [
     RankingIndexContainerComponent
@@ -17,7 +21,9 @@ import { RankingIndexContainerComponent } from '@dashboard/containers/ranking-in
 
   ],
   exports: [
-    RankingIndexContainerComponent
+    RankingIndexContainerComponent,
+    MatButtonModule,
+    MatCheckboxModule
   ]
 })
 export class DashboardModule { }
