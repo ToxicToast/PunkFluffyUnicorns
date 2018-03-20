@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule} from 'angularfire2';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -28,17 +29,17 @@ const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterS
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     EffectsModule.forRoot([]),
     StoreDevTools,
-    AppRoutingModule,
+    CoreModule,
     AdminModule,
-    DashboardModule,
-    CoreModule
+    DashboardModule
   ],
   providers: [
-
+    RouterProvider
   ],
   bootstrap: [AppComponent]
 })
