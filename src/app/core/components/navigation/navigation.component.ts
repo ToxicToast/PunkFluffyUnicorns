@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  sidebarVisible: boolean;
 
-  ngOnInit() {
+  constructor() {
+    this.sidebarVisible = false;
   }
+
+  ngOnInit() { }
 
 }

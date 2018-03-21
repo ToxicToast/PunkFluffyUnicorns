@@ -1,3 +1,16 @@
-<p>
-  navigation works!
-</p>
+<aside class="sidebar" [class.toggled]="sidebarVisible">
+    <perfect-scrollbar>
+        <ul class="navigation">
+            <li routerLinkActive="navigation__active">
+                <a>
+                    <i class="zmdi zmdi-home"></i> Dashboard
+                </a>
+            </li>
+            <li routerLinkActive="navigation__active">
+                <a>
+                    <i class="zmdi zmdi-trending-up"></i> Ranked
+                </a>
+            </li>
+        </ul>
+    </perfect-scrollbar>
+</aside>

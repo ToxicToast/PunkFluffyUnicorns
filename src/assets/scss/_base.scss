@@ -1,25 +1,24 @@
 * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  &:focus,
-  &:active {
-    outline: none !important;
-  }
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &:focus,
+    &:active {
+        outline: none !important;
+    }
 }
 
 html {
-  font-size: $font-size-root;
+    font-size: $font-size-root;
 }
 
 a {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 pre {
-  background-color: $pre-bg;
-  border-radius: $border-radius;
-  padding: 1.5rem;
+    background-color: $pre-bg;
+    border-radius: $border-radius;
+    padding: 1.5rem;
 }
 
 button,
@@ -27,5 +26,5 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: $font-family-sans-serif;
+    font-family: $font-family-sans-serif;
 }
