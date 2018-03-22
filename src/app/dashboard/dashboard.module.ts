@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { CoreModule } from '@core/core.module';
 
@@ -13,6 +14,7 @@ import { TeamMedalsComponent } from '@dashboard/components/team-medals/team-meda
 @NgModule({
   imports: [
     CommonModule,
+    NgxChartsModule,
     DashboardRoutingModule,
     CoreModule
   ],
