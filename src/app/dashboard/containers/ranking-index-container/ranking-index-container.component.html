@@ -1,4 +1,19 @@
 <app-layout>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="cat__core__step cat__core__step--squared cat__core__step--warning">
+                <span class="cat__core__step__digit">
+                  <i class="icmn-cross"></i>
+              </span>
+                <div class="cat__core__step__desc">
+                    <span class="cat__core__step__title">Error</span>
+                    <p>Es kann zu Fehlern kommen, da diese App via HTTPS läuft, die Daten aber via HTTP abgerufen werden</p>
+                    <p>Binnen 24h wird aber auf SSL umgestellt.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
     <app-team-stats [state]="stats$ | async"></app-team-stats>
     <app-team-medals [state]="medals$ | async"></app-team-medals>
     <app-team-trends [state]="trends$ | async"></app-team-trends>
