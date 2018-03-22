@@ -47,6 +47,17 @@ switch (action.type) {
       total
     });
   }
+  case StatisticsActionTypes.LOAD_TEAM_STATISTICS_FAILURE: {
+    return Object.assign({}, state, {
+      loading: false,
+      loaded: true,
+      error: true,
+      wins: 0,
+      loses: 0,
+      draws: 0,
+      total: 0
+    });
+  }
   default:
     return state;
 }
