@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://api.toxictoast.de/'
+  baseUrl: 'http://newapi.toxictoast.de'
 };
