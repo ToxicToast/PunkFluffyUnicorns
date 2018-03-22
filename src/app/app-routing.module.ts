@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', loadChildren: '@dashboard/dashboard.module#DashboardModule', pathMatch: 'full' },
+  { path: 'ranked', loadChildren: '@ranked/ranked.module#RankedModule', pathMatch: 'full' }
 ];
 
 const options = {

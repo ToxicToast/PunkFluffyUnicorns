@@ -21,6 +21,7 @@
       "@env/*": ["environments/*"],
       "@assets/*": ["assets/*"],
       "@dashboard/*": ["app/dashboard/*"],
+      "@ranked/*": ["app/ranked/*"],
       "@admin/*": ["app/admin/*"],
       "@core/*": ["app/core/*"]
     }

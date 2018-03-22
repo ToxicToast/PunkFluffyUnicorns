@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { AdminModule } from '@admin/admin.module';
 import { DashboardModule } from '@dashboard/dashboard.module';
 import { CoreModule } from '@core/core.module';
+import { RankedModule } from '@ranked/ranked.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -33,15 +34,16 @@ const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterS
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     EffectsModule.forRoot([]),
     StoreDevTools,
     HttpClientModule,
+    AppRoutingModule,
     CoreModule,
     AdminModule,
-    DashboardModule
+    DashboardModule,
+    RankedModule
   ],
   providers: [
     RouterProvider
