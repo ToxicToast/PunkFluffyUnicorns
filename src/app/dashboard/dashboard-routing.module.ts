@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { RankingIndexContainerComponent } from '@dashboard/containers/ranking-index-container/ranking-index-container.component';
+import { DashboardIndexContainerComponent } from '@dashboard/containers/dashboard-index-container/dashboard-index-container.component';
 
 const routes: Routes = [
-  { path: '', component: RankingIndexContainerComponent },
+  { path: '', component: DashboardIndexContainerComponent },
 ];
 
 @NgModule({

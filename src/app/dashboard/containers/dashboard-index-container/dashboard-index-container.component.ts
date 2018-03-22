@@ -14,11 +14,11 @@ import { Statistics } from '@dashboard/models/statistics';
 import { Medals } from '@dashboard/models/medals';*/
 
 @Component({
-  selector: 'app-ranking-index-container',
-  templateUrl: './ranking-index-container.component.html',
-  styleUrls: ['./ranking-index-container.component.scss']
+  selector: 'app-dashboard-index-container',
+  templateUrl: './dashboard-index-container.component.html',
+  styleUrls: ['./dashboard-index-container.component.scss']
 })
-export class RankingIndexContainerComponent implements OnInit {
+export class DashboardIndexContainerComponent implements OnInit {
 
   stats$: Observable<any>;
   medals$: Observable<any>;
@@ -34,10 +34,5 @@ export class RankingIndexContainerComponent implements OnInit {
     this.streamers$ = this.store.select(fromDashboard.getStreamersState);
   }
 
-  ngOnInit() {
-    this.store.dispatch(new statistics.LoadTeamStatistics());
-    this.store.dispatch(new medals.LoadTeamMedals());
-    this.store.dispatch(new trends.LoadTeamTrends());
-    this.store.dispatch(new streamers.LoadTeamStreamers());
-  }
+  ngOnInit() { }
 }

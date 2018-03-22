@@ -17,7 +17,7 @@ import { DashboardRoutingModule } from '@dashboard/dashboard-routing.module';
 
 import { DashboardService } from '@dashboard/services/dashboard.service';
 
-import { RankingIndexContainerComponent } from '@dashboard/containers/ranking-index-container/ranking-index-container.component';
+import { DashboardIndexContainerComponent } from '@dashboard/containers/dashboard-index-container/dashboard-index-container.component';
 import { TeamStatsComponent } from '@dashboard/components/team-stats/team-stats.component';
 import { TeamTrendsComponent } from '@dashboard/components/team-trends/team-trends.component';
 import { TeamMedalsComponent } from '@dashboard/components/team-medals/team-medals.component';
@@ -34,7 +34,7 @@ import { TeamStreamersComponent } from '@dashboard/components/team-streamers/tea
     CoreModule
   ],
   declarations: [
-    RankingIndexContainerComponent,
+    DashboardIndexContainerComponent,
     TeamStatsComponent,
     TeamTrendsComponent,
     TeamMedalsComponent,
@@ -44,7 +44,7 @@ import { TeamStreamersComponent } from '@dashboard/components/team-streamers/tea
     DashboardService
   ],
   exports: [
-    RankingIndexContainerComponent,
+    DashboardIndexContainerComponent,
     TeamStatsComponent,
     TeamTrendsComponent
   ]
