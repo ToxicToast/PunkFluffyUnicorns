@@ -20,10 +20,8 @@ import { RankedIndexContainerComponent } from '@ranked/containers/ranked-index-c
     CoreModule
   ],
   declarations: [
-    RankedIndexContainerComponent
-  ],
+  RankedIndexContainerComponent],
   exports: [
-    RankedIndexContainerComponent
   ],
   providers: []
 })
