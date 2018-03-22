@@ -5,7 +5,9 @@
         </h5>
     </div>
     <div class="card-body">
-        <div class="row">
+        <app-loading-bar *ngIf="state.loading"></app-loading-bar>
+        <app-error-bar *ngIf="state.loaded && state.error"></app-error-bar>
+        <div class="row" *ngIf="state.loaded && !state.error">
             <div class="col-xl-4">
                 <div class="cat__core__step cat__core__step--default mb-4">
                     <span class="cat__core__step__digit">
@@ -13,7 +15,7 @@
                     </span>
                     <div class="cat__core__step__desc">
                         <span class="cat__core__step__title">Gold</span>
-                        <p>0</p>
+                        <p>{{ state.gold }}</p>
                     </div>
                 </div>
             </div>
@@ -25,7 +27,7 @@
                     </span>
                     <div class="cat__core__step__desc">
                         <span class="cat__core__step__title">Silver</span>
-                        <p>0</p>
+                        <p>{{ state.silver }}</p>
                     </div>
                 </div>
             </div>
@@ -37,7 +39,7 @@
                     </span>
                     <div class="cat__core__step__desc">
                         <span class="cat__core__step__title">Bronze</span>
-                        <p>0</p>
+                        <p>{{ state.bronze }}</p>
                     </div>
                 </div>
             </div>

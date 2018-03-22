@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Statistics } from '@dashboard/models/statistics';
 
 @Component({
   selector: 'app-team-medals',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamMedalsComponent implements OnInit {
 
+  @Input() state: any;
+
   constructor() { }
 
   ngOnInit() {
+    console.error(this.state);
   }
 
 }

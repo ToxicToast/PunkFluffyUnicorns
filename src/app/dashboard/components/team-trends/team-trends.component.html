@@ -5,8 +5,10 @@
         </h5>
     </div>
     <div class="card-body">
-        <div class="row">
-            <ngx-charts-line-chart [results]="stats" [roundDomains]="roundDomains" [yAxis]="yAxis" [showYAxisLabel]="showYAxisLabel" [yAxisLabel]="yAxisLabel"></ngx-charts-line-chart>
+        <app-loading-bar *ngIf="state.loading"></app-loading-bar>
+        <app-error-bar *ngIf="state.loaded && state.error"></app-error-bar>
+        <div class="row" *ngIf="state.loaded && !state.error">
+            <ngx-charts-line-chart [results]="state.trends" [roundDomains]="roundDomains" [yAxis]="yAxis" [showYAxisLabel]="showYAxisLabel" [yAxisLabel]="yAxisLabel"></ngx-charts-line-chart>
         </div>
     </div>
 </section>

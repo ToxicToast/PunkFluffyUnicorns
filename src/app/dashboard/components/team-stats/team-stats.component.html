@@ -5,51 +5,53 @@
         </h5>
     </div>
     <div class="card-body">
-        <div class="row">
-            <div class="col-xl-3">
-                <div class="cat__core__step cat__core__step--success mb-4">
-                    <span class="cat__core__step__digit">
-                      <i class="fa fa-check"></i>
+        <app-loading-bar *ngIf="state.loading"></app-loading-bar>
+        <app-error-bar *ngIf="state.loaded && state.error"></app-error-bar>
+        <div class="row" *ngIf="state.loaded && !state.error">
+            <div class="col-xl-3 ">
+                <div class="cat__core__step cat__core__step--success mb-4 ">
+                    <span class="cat__core__step__digit ">
+                      <i class="fa fa-check "></i>
                    </span>
-                    <div class="cat__core__step__desc">
-                        <span class="cat__core__step__title">Wins</span>
-                        <p>0</p>
+                    <div class="cat__core__step__desc ">
+                        <span class="cat__core__step__title ">Wins</span>
+                        <p>{{ state.wins }}</p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-xl-3">
-                <div class="cat__core__step cat__core__step--danger mb-4">
-                    <span class="cat__core__step__digit">
-                      <i class="fa fa-close"></i>
+            <div class="col-xl-3 ">
+                <div class="cat__core__step cat__core__step--danger mb-4 ">
+                    <span class="cat__core__step__digit ">
+                      <i class="fa fa-close "></i>
                    </span>
-                    <div class="cat__core__step__desc">
-                        <span class="cat__core__step__title">Loses</span>
-                        <p>0</p>
+                    <div class="cat__core__step__desc ">
+                        <span class="cat__core__step__title ">Loses</span>
+                        <p>{{ state.loses }}</p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-xl-3">
-                <div class="cat__core__step cat__core__step--primary mb-4">
-                    <span class="cat__core__step__digit">
-                      <i class="fa fa-code"></i>
+            <div class="col-xl-3 ">
+                <div class="cat__core__step cat__core__step--primary mb-4 ">
+                    <span class="cat__core__step__digit ">
+                      <i class="fa fa-code "></i>
                    </span>
-                    <div class="cat__core__step__desc">
-                        <span class="cat__core__step__title">Draws</span>
-                        <p>0</p>
+                    <div class="cat__core__step__desc ">
+                        <span class="cat__core__step__title ">Draws</span>
+                        <p>{{ state.draws }}</p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-xl-3">
-                <div class="cat__core__step cat__core__step--default mb-4">
-                    <span class="cat__core__step__digit">
-                      <i class="icmn-database"></i>
+            <div class="col-xl-3 ">
+                <div class="cat__core__step cat__core__step--default mb-4 ">
+                    <span class="cat__core__step__digit ">
+                      <i class="icmn-database "></i>
                    </span>
-                    <div class="cat__core__step__desc">
-                        <span class="cat__core__step__title">Games Total</span>
-                        <p>0</p>
+                    <div class="cat__core__step__desc ">
+                        <span class="cat__core__step__title ">Games Total</span>
+                        <p>{{ state.total }}</p>
                     </div>
                 </div>
             </div>

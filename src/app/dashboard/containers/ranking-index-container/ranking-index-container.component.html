@@ -1,5 +1,6 @@
 <app-layout>
-    <app-team-stats></app-team-stats>
-    <app-team-medals></app-team-medals>
-    <app-team-trends></app-team-trends>
+    <app-team-stats [state]="stats$ | async"></app-team-stats>
+    <app-team-medals [state]="medals$ | async"></app-team-medals>
+    <app-team-trends [state]="trends$ | async"></app-team-trends>
+    <app-team-streamers [state]="streamers$ | async"></app-team-streamers>
 </app-layout>

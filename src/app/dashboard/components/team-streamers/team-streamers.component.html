@@ -1,0 +1,25 @@
+<section class="card">
+    <div class="card-header ui-sortable-handle">
+        <h5 class="mb-0 text-black">
+            <strong>Team Streamers</strong>
+        </h5>
+    </div>
+    <div class="card-body">
+        <app-loading-bar *ngIf="state.loading"></app-loading-bar>
+        <app-error-bar *ngIf="state.loaded && state.error"></app-error-bar>
+        <div class="row" *ngIf="state.loaded && !state.error">
+            <div class="col-xl-3" *ngFor="let streamer of state.streamers">
+                <div [class]="streamClass(streamer.stream.online)">
+                    <span class="cat__core__step__digit">
+                      <i [class]="streamIcon(streamer.stream.online)"></i>
+                   </span>
+                    <div class="cat__core__step__desc ">
+                        <span class="cat__core__step__title ">{{ streamer.channel }}</span>
+                        <p></p>
+                        <small [innerHTML]="getStatusGameText(streamer.stream.online, streamer.stream.viewer, streamer.stream.game)">STATUS & GAME</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

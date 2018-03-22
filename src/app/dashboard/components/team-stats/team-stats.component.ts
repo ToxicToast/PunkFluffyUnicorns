@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-team-stats',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamStatsComponent implements OnInit {
 
+  @Input() state: any;
+
   constructor() { }
 
   ngOnInit() {
+    console.error(this.state);
   }
 
 }

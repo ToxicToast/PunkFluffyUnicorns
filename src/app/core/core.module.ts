@@ -9,6 +9,7 @@ import { MaintenanceComponent } from '@core/components/maintenance/maintenance.c
 import { HeaderComponent } from '@core/components/header/header.component';
 import { LayoutComponent } from '@core/components/layout/layout.component';
 import { NavigationComponent } from '@core/components/navigation/navigation.component';
+import { ErrorBarComponent } from '@core/components/error-bar/error-bar.component';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -24,14 +25,16 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MaintenanceComponent,
     HeaderComponent,
     LayoutComponent,
-    NavigationComponent
+    NavigationComponent,
+    ErrorBarComponent
   ],
   exports: [
     LoadingBarComponent,
     MaintenanceComponent,
     HeaderComponent,
     LayoutComponent,
-    NavigationComponent
+    NavigationComponent,
+    ErrorBarComponent
   ]
 })
 export class CoreModule { }
