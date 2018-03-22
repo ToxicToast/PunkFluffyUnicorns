@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  maTheme = 'blue';
-
   constructor() { }
 
   ngOnInit() {

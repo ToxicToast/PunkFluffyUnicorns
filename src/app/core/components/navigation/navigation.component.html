@@ -1,16 +1,18 @@
-<aside class="sidebar" [class.toggled]="sidebarVisible">
-    <perfect-scrollbar>
-        <ul class="navigation">
-            <li routerLinkActive="navigation__active">
-                <a>
-                    <i class="zmdi zmdi-home"></i> Dashboard
-                </a>
-            </li>
-            <li routerLinkActive="navigation__active">
-                <a>
-                    <i class="zmdi zmdi-trending-up"></i> Ranked
-                </a>
-            </li>
-        </ul>
-    </perfect-scrollbar>
-</aside>
+<div class="cat__menu-left">
+    <!--<div class="cat__menu-left__logo">
+        Logo
+    </div>-->
+    <ul class="cat__menu-left__list cat__menu-left__list--root">
+        <li class="cat__menu-left__item">
+            <a>
+                <span class="cat__menu-left__icon icmn-home"></span> Dashboard
+            </a>
+        </li>
+        <li class="cat__menu-left__divider"></li>
+        <li class="cat__menu-left__item">
+            <a>
+                <span class="cat__menu-left__icon icmn-star-full"></span> Ranked
+            </a>
+        </li>
+    </ul>
+</div>
