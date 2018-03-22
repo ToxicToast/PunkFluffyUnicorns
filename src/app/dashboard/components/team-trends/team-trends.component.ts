@@ -9,10 +9,10 @@ import { Chart, ChartSeries } from '@dashboard/models/chart';
 })
 export class TeamTrendsComponent implements OnInit {
 
-  roundDomains: boolean = true;
-  showYAxisLabel: boolean = true;
-  yAxis: boolean = true;
-  yAxisLabel: string = 'Skill Rating';
+  roundDomains = true;
+  showYAxisLabel = true;
+  yAxis = true;
+  yAxisLabel = 'Skill Rating';
 
   @Input() state: any;
 
