@@ -21,7 +21,7 @@ export class NavigationComponent implements OnInit {
   routeToLink(route: string) {
     this.router.navigate([
       route
-    ])
+    ]);
   }
 
 }
