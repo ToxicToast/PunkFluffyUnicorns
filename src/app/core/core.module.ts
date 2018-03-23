@@ -10,6 +10,7 @@ import { HeaderComponent } from '@core/components/header/header.component';
 import { LayoutComponent } from '@core/components/layout/layout.component';
 import { NavigationComponent } from '@core/components/navigation/navigation.component';
 import { ErrorBarComponent } from '@core/components/error-bar/error-bar.component';
+import { WarningBarComponent } from '@core/components/warning-bar/warning-bar.component';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -26,7 +27,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HeaderComponent,
     LayoutComponent,
     NavigationComponent,
-    ErrorBarComponent
+    ErrorBarComponent,
+    WarningBarComponent
   ],
   exports: [
     LoadingBarComponent,
