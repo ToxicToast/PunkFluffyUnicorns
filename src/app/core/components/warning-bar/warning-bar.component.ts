@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WarningBarComponent implements OnInit {
 
-  @Input() warningMessage: string = 'Something went wrong!';
+  @Input() message: string = 'Something went wrong!';
 
   constructor() { }
 
