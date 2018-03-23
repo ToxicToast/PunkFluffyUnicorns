@@ -36,7 +36,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HeaderComponent,
     LayoutComponent,
     NavigationComponent,
-    ErrorBarComponent
+    ErrorBarComponent,
+    WarningBarComponent
   ]
 })
 export class CoreModule { }
