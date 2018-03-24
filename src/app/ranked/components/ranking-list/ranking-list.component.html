@@ -1,48 +1,57 @@
-<div class="col-lg-12">
-    <div class="mb-5">
-        <table class="table table-striped">
-            <thead class="thead-default">
-                <tr>
-                    <th>#</th>
-                    <th>Player</th>
-                    <th>Level</th>
-                    <th>Ranking</th>
-                    <th>League</th>
-                    <th>Total Games</th>
-                    <th>Game Results</th>
-                    <th>Heroes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let player of ranking.ranking; let i = index;">
-                    <th scope="row">{{ i+1 }}</th>
-                    <td>
-                        <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;"> {{ player.player.name }}
-                    </td>
-                    <td>{{ player.level }}</td>
-                    <td>{{ player.rank }}</td>
-                    <td>{{ player.tier }}</td>
-                    <td>{{ player.total }}</td>
-                    <td>
-                        <div class="cat__core__steps-inline d-block">
-                            <span class="cat__core__step cat__core__step--success">
-                                <b>{{ player.wins }}</b>
-                            </span>
-                            <span class="cat__core__step cat__core__step--danger">
-                                <b>{{ player.loses }}</b>
-                            </span>
-                            <span class="cat__core__step cat__core__step--info">
-                                <b>{{ player.ties }}</b>
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
-                        <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
-                        <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<section class="card">
+    <div class="card-header">
+        <h5 class="text-black"><strong>Punk Fluffy Unicorns - Ranked List</strong></h5>
     </div>
-</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="mb-5">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Player</th>
+                                <th>Level</th>
+                                <th>Ranking</th>
+                                <th>League</th>
+                                <th>Total Games</th>
+                                <th>Game Results</th>
+                                <th>Heroes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let player of ranking.ranking; let i = index;">
+                                <th scope="row">{{ i+1 }}</th>
+                                <td>
+                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;"> {{ player.player.name }}
+                                </td>
+                                <td>{{ player.level }}</td>
+                                <td>{{ player.rank }}</td>
+                                <td>{{ player.tier }}</td>
+                                <td>{{ player.total }}</td>
+                                <td>
+                                    <div class="cat__core__steps-inline d-block">
+                                        <span class="cat__core__step cat__core__step--success">
+                                        <b>{{ player.wins }}</b>
+                                    </span>
+                                        <span class="cat__core__step cat__core__step--danger">
+                                        <b>{{ player.loses }}</b>
+                                    </span>
+                                        <span class="cat__core__step cat__core__step--info">
+                                        <b>{{ player.ties }}</b>
+                                    </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
+                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
+                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
