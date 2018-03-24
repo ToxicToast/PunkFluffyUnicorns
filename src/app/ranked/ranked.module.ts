@@ -15,7 +15,7 @@ import { RankingService } from '@ranked/services/ranking.service';
 
 import { RankedRoutingModule } from '@ranked/ranked-routing.module';
 import { RankedIndexContainerComponent } from '@ranked/containers/ranked-index-container/ranked-index-container.component';
-import { RankingListComponent } from './Components/ranking-list/ranking-list.component';
+import { RankingListComponent } from '@ranked/components/ranking-list/ranking-list.component';
 
 @NgModule({
   imports: [
