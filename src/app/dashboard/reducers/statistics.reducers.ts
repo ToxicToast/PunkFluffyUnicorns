@@ -36,7 +36,6 @@ switch (action.type) {
   }
   case StatisticsActionTypes.LOAD_TEAM_STATISTICS_SUCCESS: {
     const { wins, loses, draws, total } = action.payload;
-    console.error(action.payload);
     return Object.assign({}, state, {
       loading: false,
       loaded: true,

@@ -24,6 +24,14 @@ import { reducers, metaReducers } from '@core/reducers/index';
 
 import { environment } from '@env/environment';
 
+//
+import { MedalsEffects } from '@dashboard/effects/medals.effects';
+import { StatisticsEffects } from '@dashboard/effects/statistics.effects';
+import { TrendsEffects } from '@dashboard/effects/trends.effects';
+import { StreamersEffects } from '@dashboard/effects/streamers.effects';
+import { RankingEffects } from '@ranked/effects/ranking.effects';
+//
+
 const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument() : [];
 const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer };
 
@@ -36,7 +44,13 @@ const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterS
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([
+      MedalsEffects,
+      StatisticsEffects,
+      TrendsEffects,
+      StreamersEffects,
+      RankingEffects
+    ]),
     StoreDevTools,
     HttpClientModule,
     AppRoutingModule,

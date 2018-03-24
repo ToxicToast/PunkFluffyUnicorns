@@ -30,7 +30,7 @@ import { TeamStreamersComponent } from '@dashboard/components/team-streamers/tea
     NgxChartsModule,
     DashboardRoutingModule,
     StoreModule.forFeature('dashboard', reducers),
-    EffectsModule.forFeature([MedalsEffects, StatisticsEffects, TrendsEffects, StreamersEffects]),
+    // EffectsModule.forFeature([MedalsEffects, StatisticsEffects, TrendsEffects, StreamersEffects]),
     CoreModule
   ],
   declarations: [

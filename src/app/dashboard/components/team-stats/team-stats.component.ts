@@ -12,7 +12,7 @@ export class TeamStatsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.error(this.state);
+    // console.error(this.state);
   }
 
 }

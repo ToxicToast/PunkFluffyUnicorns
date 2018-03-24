@@ -8,6 +8,9 @@ import * as medals from '@dashboard/actions/medals.actions';
 import * as statistics from '@dashboard/actions/statistics.actions';
 import * as trends from '@dashboard/actions/trends.actions';
 import * as streamers from '@dashboard/actions/streamers.actions';
+//
+import * as fromRanked from '@ranked/reducers/ranked.reducer';
+import * as ranking from '@ranked/actions/ranking.actions';
 
 
 @Component({
@@ -19,18 +22,24 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    private store: Store<fromDashboard.State>
+    private dashboardStore: Store<fromDashboard.State>,
+    private rankedStore: Store<fromRanked.State>
   ) {
     console.log('configured routes: ', this.router.config);
     //
     this.dispatchDashboard();
+    this.dispatchRanked();
   }
 
   private dispatchDashboard() {
-    this.store.dispatch(new statistics.LoadTeamStatistics());
-    this.store.dispatch(new medals.LoadTeamMedals());
-    this.store.dispatch(new trends.LoadTeamTrends());
-    this.store.dispatch(new streamers.LoadTeamStreamers());
+    this.dashboardStore.dispatch(new statistics.LoadTeamStatistics());
+    this.dashboardStore.dispatch(new medals.LoadTeamMedals());
+    this.dashboardStore.dispatch(new trends.LoadTeamTrends());
+    this.dashboardStore.dispatch(new streamers.LoadTeamStreamers());
+  }
+
+  private dispatchRanked() {
+    this.rankedStore.dispatch(new ranking.LoadTeamRanking());
   }
 
 }

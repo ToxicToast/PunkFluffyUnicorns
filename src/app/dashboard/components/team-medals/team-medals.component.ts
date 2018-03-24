@@ -13,7 +13,7 @@ export class TeamMedalsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.error(this.state);
+    // console.error(this.state);
   }
 
 }

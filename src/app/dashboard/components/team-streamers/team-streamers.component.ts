@@ -12,7 +12,7 @@ export class TeamStreamersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.error(this.state);
+    // console.error(this.state);
   }
 
   streamClass(isOnline: boolean): string {
