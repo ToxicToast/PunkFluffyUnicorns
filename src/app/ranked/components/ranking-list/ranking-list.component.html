@@ -15,6 +15,7 @@
                                 <th>Player</th>
                                 <th>Level</th>
                                 <th>Ranking</th>
+                                <th>Difference</th>
                                 <th>League</th>
                                 <th>Total Games</th>
                                 <th>Game Results</th>
@@ -25,11 +26,12 @@
                             <tr *ngFor="let player of state.ranking; let i = index;">
                                 <th scope="row">{{ i+1 }}</th>
                                 <td>
-                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;"> {{ player.player.name }}
+                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;"> {{ player.player.player_name }}
                                 </td>
                                 <td>{{ player.level }}</td>
                                 <td>{{ player.rank }}</td>
-                                <td>{{ player.tier }}</td>
+                                <td [innerHTML]="getRankingWithDiff(player.rank, player.trends)"></td>
+                                <td><img [src]="getPlayerTier(player.tier)" style="max-height: 50px;"></td>
                                 <td>{{ player.total }}</td>
                                 <td>
                                     <div class="cat__core__steps-inline d-block">
