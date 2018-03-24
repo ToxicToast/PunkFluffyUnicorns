@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RankingListComponent implements OnInit {
 
-  @Input() ranking: any;
+  @Input() state: any;
 
   constructor() { }
 

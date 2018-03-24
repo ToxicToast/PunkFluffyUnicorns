@@ -1,5 +1,5 @@
 <app-layout>
     <app-warning-bar [message]="'Ranked Page is still work in Progress'"></app-warning-bar>
     <br>
-    <app-ranking-list [ranking]="rankings$ | async"></app-ranking-list>
+    <app-ranking-list [state]="rankings$ | async"></app-ranking-list>
 </app-layout>

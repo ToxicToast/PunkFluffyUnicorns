@@ -3,7 +3,9 @@
         <h5 class="text-black"><strong>Punk Fluffy Unicorns - Ranked List</strong></h5>
     </div>
     <div class="card-body">
-        <div class="row">
+        <app-loading-bar *ngIf="state.loading"></app-loading-bar>
+        <app-error-bar *ngIf="state.loaded && state.error"></app-error-bar>
+        <div class="row" *ngIf="state.loaded && !state.error">
             <div class="col-lg-12">
                 <div class="mb-5">
                     <table class="table table-striped">
@@ -20,7 +22,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let player of ranking.ranking; let i = index;">
+                            <tr *ngFor="let player of state.ranking; let i = index;">
                                 <th scope="row">{{ i+1 }}</th>
                                 <td>
                                     <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;"> {{ player.player.name }}
