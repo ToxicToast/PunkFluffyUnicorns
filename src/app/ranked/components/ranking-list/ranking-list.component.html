@@ -15,11 +15,11 @@
                                 <th>Player</th>
                                 <th>Level</th>
                                 <th>Ranking</th>
-                                <th>Difference</th>
-                                <th>League</th>
-                                <th>Total Games</th>
-                                <th>Game Results</th>
-                                <th>Heroes</th>
+                                <th class="hidden-mobile">Difference</th>
+                                <th class="hidden-mobile">League</th>
+                                <th class="hidden-mobile">Total Games</th>
+                                <th class="hidden-mobile">Game Results</th>
+                                <th class="hidden-mobile">Heroes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,10 +30,10 @@
                                 </td>
                                 <td>{{ player.level }}</td>
                                 <td>{{ player.rank }}</td>
-                                <td [innerHTML]="getRankingWithDiff(player.rank, player.trends)"></td>
-                                <td><img [src]="getPlayerTier(player.tier)" style="max-height: 50px;"></td>
-                                <td>{{ player.total }}</td>
-                                <td>
+                                <td [innerHTML]="getRankingWithDiff(player.rank, player.trends)" class="hidden-mobile"></td>
+                                <td><img [src]="getPlayerTier(player.tier)" style="max-height: 50px;" class="hidden-mobile"></td>
+                                <td class="hidden-mobile">{{ player.total }}</td>
+                                <td class="hidden-mobile">
                                     <div class="cat__core__steps-inline d-block">
                                         <span class="cat__core__step cat__core__step--success">
                                         <b>{{ player.wins }}</b>
@@ -46,7 +46,7 @@
                                     </span>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="hidden-mobile">
                                     <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
                                     <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
                                     <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">

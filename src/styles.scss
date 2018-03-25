@@ -12,3 +12,12 @@
     display: inline-block;
     animation: anim-rotate 2s infinite linear;
 }
+
+@media (max-width: 768px) {
+    .hidden-mobile {
+        display: none;
+    }
+    .cat__top-bar__left>.cat__top-bar__item {
+        margin-right: 0rem;
+    }
+}
