@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 import { Store } from '@ngrx/store';
 
@@ -16,11 +17,17 @@ export class RankedIndexContainerComponent implements OnInit {
   rankings$: Observable<any>;
 
   constructor(
-    private store: Store<fromRanked.State>
+    private store: Store<fromRanked.State>,
+    private router: Router
   ) {
     this.rankings$ = this.store.select(fromRanked.getRankingState);
    }
 
   ngOnInit() { }
+
+  switchToPlayer(playerId) {
+    const url = `/ranked/${playerId}`;
+    this.router.navigate([url]);
+  }
 
 }

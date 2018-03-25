@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { TooltipModule } from "ngx-tooltip";
+import { TooltipModule } from 'ngx-tooltip';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -18,6 +18,7 @@ import { RankingService } from '@ranked/services/ranking.service';
 import { RankedRoutingModule } from '@ranked/ranked-routing.module';
 import { RankedIndexContainerComponent } from '@ranked/containers/ranked-index-container/ranked-index-container.component';
 import { RankingListComponent } from '@ranked/components/ranking-list/ranking-list.component';
+import { RankedShowContainerComponent } from '@ranked/containers/ranked-show-container/ranked-show-container.component';
 
 @NgModule({
   imports: [
@@ -31,10 +32,12 @@ import { RankingListComponent } from '@ranked/components/ranking-list/ranking-li
   ],
   declarations: [
     RankedIndexContainerComponent,
-    RankingListComponent
+    RankingListComponent,
+    RankedShowContainerComponent
   ],
   exports: [
-    RankedIndexContainerComponent
+    RankedIndexContainerComponent,
+    RankedShowContainerComponent
   ],
   providers: [
     RankingService

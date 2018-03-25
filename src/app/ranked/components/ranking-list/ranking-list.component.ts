@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-ranking-list',
@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RankingListComponent implements OnInit {
 
   @Input() state: any;
+  @Output() switchPlayer = new EventEmitter<number>();
 
   constructor() { }
 

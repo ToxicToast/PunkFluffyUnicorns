@@ -23,10 +23,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let player of state.ranking; let i = index;">
+                            <tr *ngFor="let player of state.ranking; let i = index;" (click)="switchPlayer.emit(player.id)">
                                 <th scope="row" class="hidden-mobile">{{ i+1 }}</th>
                                 <td>
-                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;"> {{ player.player.player_name }}
+                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px; border: 1px solid #000;"> {{ player.player.player_name }}
                                 </td>
                                 <td>{{ player.level }}</td>
                                 <td>{{ player.rank }}</td>
@@ -47,7 +47,9 @@
                                     </div>
                                 </td>
                                 <td class="hidden-mobile">
-                                    <img *ngFor="let characters of player.playtime" [src]="getCharacterAvatar(characters.character)" class="img-responsive" style="max-height: 50px; padding-left: 2px;" placement="top" [ngbTooltip]="getCharacterTooltip(characters.character)">
+                                    <div *ngFor="let characters of player.playtime" class="character-box {{ characters.character }}">
+                                        <img [src]="getCharacterAvatar(characters.character)" class="img-responsive character-icon" placement="top" [ngbTooltip]="getCharacterTooltip(characters.character)">
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
