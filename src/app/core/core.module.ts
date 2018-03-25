@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
+import { OverwatchService } from '@core/services/overwatch.service';
+
 import { LoadingBarComponent } from '@core/components/loading-bar/loading-bar.component';
 import { MaintenanceComponent } from '@core/components/maintenance/maintenance.component';
 import { HeaderComponent } from '@core/components/header/header.component';
@@ -38,6 +40,9 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavigationComponent,
     ErrorBarComponent,
     WarningBarComponent
+  ],
+  providers: [
+    OverwatchService
   ]
 })
 export class CoreModule { }

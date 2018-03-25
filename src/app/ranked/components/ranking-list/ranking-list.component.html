@@ -14,9 +14,11 @@
                                 <th class="hidden-mobile">#</th>
                                 <th>Player</th>
                                 <th>Level</th>
+                                <th class="hidden-mobile">Role</th>
                                 <th>Ranking</th>
                                 <th class="hidden-mobile">Difference</th>
                                 <th class="hidden-mobile">League</th>
+                                <th class="hidden-mobile">Next League</th>
                                 <th class="hidden-mobile">Total Games</th>
                                 <th class="hidden-mobile">Game Results</th>
                                 <th class="hidden-mobile">Heroes</th>
@@ -29,9 +31,11 @@
                                     <img [src]="player.avatar" class="img-responsive" style="max-height: 50px; border: 1px solid #000;"> {{ player.player.player_name }}
                                 </td>
                                 <td>{{ player.level }}</td>
+                                <td>{{ player.role }}</td>
                                 <td>{{ player.rank }}</td>
                                 <td [innerHTML]="getRankingWithDiff(player.rank, player.trends)" class="hidden-mobile"></td>
                                 <td><img [src]="getPlayerTier(player.tier)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getRankedTooltip(player.tier)"></td>
+                                <td><img [src]="getNextLeagueIcon(player.rank)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getNextLeagueTooltip(player.rank)"></td>
                                 <td class="hidden-mobile">{{ player.total }}</td>
                                 <td class="hidden-mobile">
                                     <div class="cat__core__steps-inline d-block">
