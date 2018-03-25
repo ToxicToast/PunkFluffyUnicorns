@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { OverwatchService } from '@core/services/overwatch.service';
-
 @Component({
   selector: 'app-ranking-list',
   templateUrl: './ranking-list.component.html',
@@ -12,9 +10,7 @@ export class RankingListComponent implements OnInit {
   @Input() state: any;
   @Output() switchPlayer = new EventEmitter<number>();
 
-  constructor(
-    private overwatchService: OverwatchService
-  ) { }
+  constructor( ) { }
 
   ngOnInit() {
   }
@@ -58,14 +54,13 @@ export class RankingListComponent implements OnInit {
     return tier;
   }
 
-  getNextLeagueIcon(ranking: number): string {
-    const league = this.overwatchService.getNextLeague(ranking);
+  getNextLeagueIcon(league: string): string {
     return `/assets/ranks/${league}.png`;
   }
 
-  getNextLeagueTooltip(ranking: number): string {
-    const points = this.overwatchService.getPoints(ranking);
-    const league = this.overwatchService.getNextLeague(ranking);
+  getNextLeagueTooltip(nexttier): string {
+    const points = nexttier.needed;
+    const league = nexttier.league;
     const upperLeague = league.charAt(0).toUpperCase() + league.slice(1);
     return `${upperLeague} in ${points} Points`;
   }

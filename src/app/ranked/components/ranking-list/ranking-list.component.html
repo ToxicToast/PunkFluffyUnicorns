@@ -35,7 +35,7 @@
                                 <td>{{ player.rank }}</td>
                                 <td [innerHTML]="getRankingWithDiff(player.rank, player.trends)" class="hidden-mobile"></td>
                                 <td><img [src]="getPlayerTier(player.tier)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getRankedTooltip(player.tier)"></td>
-                                <td><img [src]="getNextLeagueIcon(player.rank)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getNextLeagueTooltip(player.rank)"></td>
+                                <td><img [src]="getNextLeagueIcon(player.nexttier.league)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getNextLeagueTooltip(player.nexttier)"></td>
                                 <td class="hidden-mobile">{{ player.total }}</td>
                                 <td class="hidden-mobile">
                                     <div class="cat__core__steps-inline d-block">
