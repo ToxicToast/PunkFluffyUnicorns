@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { TooltipModule } from "ngx-tooltip";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
@@ -24,7 +26,8 @@ import { RankingListComponent } from '@ranked/components/ranking-list/ranking-li
     RankedRoutingModule,
     StoreModule.forFeature('ranked', reducers),
     // EffectsModule.forFeature([RankingEffects]),
-    CoreModule
+    CoreModule,
+    NgbModule
   ],
   declarations: [
     RankedIndexContainerComponent,

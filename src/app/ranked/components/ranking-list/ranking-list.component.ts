@@ -35,6 +35,24 @@ export class RankingListComponent implements OnInit {
     return returnString;
   }
 
+  getCharacterAvatar(character: string): string {
+    return `/assets/characters/${character}.png`;
+  }
+
+  getCharacterTooltip(character: string): string {
+    if (character) {
+      return character.charAt(0).toUpperCase() + character.slice(1);
+    }
+    return character;
+  }
+
+  getRankedTooltip(tier: string): string {
+    if (tier) {
+      return tier.charAt(0).toUpperCase() + tier.slice(1);
+    }
+    return tier;
+  }
+
   private getDiffIcon(difference: number): string {
     if (difference < 0) {
       return `<i class='fa fa-caret-down'></i>`;

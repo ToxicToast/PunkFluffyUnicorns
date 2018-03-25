@@ -11,7 +11,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th class="hidden-mobile">#</th>
                                 <th>Player</th>
                                 <th>Level</th>
                                 <th>Ranking</th>
@@ -24,14 +24,14 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let player of state.ranking; let i = index;">
-                                <th scope="row">{{ i+1 }}</th>
+                                <th scope="row" class="hidden-mobile">{{ i+1 }}</th>
                                 <td>
                                     <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;"> {{ player.player.player_name }}
                                 </td>
                                 <td>{{ player.level }}</td>
                                 <td>{{ player.rank }}</td>
                                 <td [innerHTML]="getRankingWithDiff(player.rank, player.trends)" class="hidden-mobile"></td>
-                                <td><img [src]="getPlayerTier(player.tier)" style="max-height: 50px;" class="hidden-mobile"></td>
+                                <td><img [src]="getPlayerTier(player.tier)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getRankedTooltip(player.tier)"></td>
                                 <td class="hidden-mobile">{{ player.total }}</td>
                                 <td class="hidden-mobile">
                                     <div class="cat__core__steps-inline d-block">
@@ -47,9 +47,7 @@
                                     </div>
                                 </td>
                                 <td class="hidden-mobile">
-                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
-                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
-                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px;">
+                                    <img *ngFor="let characters of player.playtime" [src]="getCharacterAvatar(characters.character)" class="img-responsive" style="max-height: 50px; padding-left: 2px;" placement="top" [ngbTooltip]="getCharacterTooltip(characters.character)">
                                 </td>
                             </tr>
                         </tbody>
