@@ -97,6 +97,10 @@ export class RankingListComponent implements OnInit {
     }
   }
 
+  trackByName(index, player) {
+    return player.player.player_name;
+  }
+
   private getDiffIcon(difference: number): string {
     if (difference < 0) {
       return `<i class='fa fa-caret-down'></i>`;

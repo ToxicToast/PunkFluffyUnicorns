@@ -26,25 +26,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let player of state.ranking; let i = index;" (click)="switchPlayer.emit(player.id)">
+                            <tr *ngFor="let player of state.ranking; let i = index; trackBy: trackByName" (click)="switchPlayer.emit(player.id)">
                                 <th scope="row" class="hidden-mobile">
                                     <button class="btn btn-sm btn-default">{{ i+1 }}</button>
                                 </th>
                                 <td>
-                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px; border: 1px solid #000;"> {{ player.player.player_name }}
+                                    <img [src]="player.avatar" class="img-responsive" style="max-height: 50px; border: 1px solid #000;" alt="Player Avatar"> {{ player.player.player_name }}
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default">{{ player.level }}</button>
                                 </td>
-                                <td>{{ player.role }}</td>
+                                <td class="hidden-mobile">{{ player.role }}</td>
                                 <td>
                                     <button class="btn btn-sm btn-default">{{ player.rank }}</button>
                                 </td>
-                                <td>
+                                <td class="hidden-mobile">
                                     <button [innerHTML]="getRankingWithDiff(player.rank, player.trends)" [class]="getRankingWithDiffClass(player.rank, player.trends)"></button>
                                 </td>
-                                <td><img [src]="getPlayerTier(player.tier)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getRankedTooltip(player.tier)"></td>
-                                <td><img [src]="getNextLeagueIcon(player.nexttier.league)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getNextLeagueTooltip(player.nexttier)"></td>
+                                <td><img [src]="getPlayerTier(player.tier)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getRankedTooltip(player.tier)" alt="Player Tier"></td>
+                                <td><img [src]="getNextLeagueIcon(player.nexttier.league)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getNextLeagueTooltip(player.nexttier)" alt="Player Next Tier"></td>
                                 <td class="hidden-mobile">
                                     <button class="btn btn-sm btn-default">{{ player.total }}</button>
                                 </td>
@@ -66,7 +66,7 @@
                                 </td>
                                 <td class="hidden-mobile">
                                     <div *ngFor="let characters of player.playtime" class="character-box {{ characters.character }}">
-                                        <img [src]="getCharacterAvatar(characters.character)" class="img-responsive character-icon" placement="top" [ngbTooltip]="getCharacterTooltip(characters.character, characters.role)">
+                                        <img [src]="getCharacterAvatar(characters.character)" class="img-responsive character-icon" placement="top" [ngbTooltip]="getCharacterTooltip(characters.character, characters.role)" alt="Player Playtime Character">
                                     </div>
                                 </td>
                             </tr>
