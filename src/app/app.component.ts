@@ -25,7 +25,7 @@ export class AppComponent {
     private dashboardStore: Store<fromDashboard.State>,
     private rankedStore: Store<fromRanked.State>
   ) {
-    console.log('configured routes: ', this.router.config);
+    // console.log('configured routes: ', this.router.config);
     //
     this.dispatchDashboard();
     this.dispatchRanked();
