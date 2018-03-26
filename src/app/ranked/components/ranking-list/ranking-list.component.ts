@@ -29,7 +29,8 @@ export class RankingListComponent implements OnInit {
       const icon = this.getDiffIcon(difference);
       const symbol = this.getDiffSymbol(difference);
       if (difference !== 0) {
-        returnString += `${symbol} ${difference} ${icon}`;
+        // returnString += `${symbol} ${difference} ${icon}`;
+        returnString += `${symbol} ${difference}`;
       }
     }
     //
