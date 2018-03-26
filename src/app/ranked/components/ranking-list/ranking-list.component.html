@@ -27,17 +27,27 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let player of state.ranking; let i = index;" (click)="switchPlayer.emit(player.id)">
-                                <th scope="row" class="hidden-mobile">{{ i+1 }}</th>
+                                <th scope="row" class="hidden-mobile">
+                                    <button class="btn btn-sm btn-default">{{ i+1 }}</button>
+                                </th>
                                 <td>
                                     <img [src]="player.avatar" class="img-responsive" style="max-height: 50px; border: 1px solid #000;"> {{ player.player.player_name }}
                                 </td>
-                                <td>{{ player.level }}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-default">{{ player.level }}</button>
+                                </td>
                                 <td>{{ player.role }}</td>
-                                <td>{{ player.rank }}</td>
-                                <td [innerHTML]="getRankingWithDiff(player.rank, player.trends)" class="hidden-mobile"></td>
+                                <td>
+                                    <button class="btn btn-sm btn-default">{{ player.rank }}</button>
+                                </td>
+                                <td>
+                                    <button [innerHTML]="getRankingWithDiff(player.rank, player.trends)" [class]="getRankingWithDiffClass(player.rank, player.trends)"></button>
+                                </td>
                                 <td><img [src]="getPlayerTier(player.tier)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getRankedTooltip(player.tier)"></td>
                                 <td><img [src]="getNextLeagueIcon(player.nexttier.league)" style="max-height: 50px;" class="hidden-mobile" placement="top" [ngbTooltip]="getNextLeagueTooltip(player.nexttier)"></td>
-                                <td class="hidden-mobile">{{ player.total }}</td>
+                                <td class="hidden-mobile">
+                                    <button class="btn btn-sm btn-default">{{ player.total }}</button>
+                                </td>
                                 <td class="hidden-mobile">
                                     <div class="cat__core__steps-inline d-block">
                                         <span class="cat__core__step cat__core__step--success">

@@ -29,10 +29,27 @@ export class RankingListComponent implements OnInit {
       const icon = this.getDiffIcon(difference);
       const symbol = this.getDiffSymbol(difference);
       if (difference !== 0) {
-        returnString += ` ( ${symbol} ${difference} ${icon} )`;
+        returnString += `${symbol} ${difference} ${icon}`;
       }
     }
     //
+    return returnString;
+  }
+
+  getRankingWithDiffClass(ranking: number, trends: any[]): string {
+    let returnString = '';
+    if (trends.length > 0) {
+      const lastRank = trends[0];
+      const { player_rank } = lastRank;
+      const difference = ranking - player_rank;
+      if (difference > 0) {
+        returnString = 'btn btn-sm btn-success';
+      } else if (difference < 0) {
+        returnString = 'btn btn-sm btn-danger';
+      } else {
+        returnString = 'always-hide';
+      }
+    }
     return returnString;
   }
 
