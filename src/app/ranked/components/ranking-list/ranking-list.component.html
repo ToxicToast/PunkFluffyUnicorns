@@ -21,6 +21,7 @@
                                 <th class="hidden-mobile">Next League</th>
                                 <th class="hidden-mobile">Total Games</th>
                                 <th class="hidden-mobile">Game Results</th>
+                                <th class="hidden-mobile">Winrate</th>
                                 <th class="hidden-mobile">Heroes</th>
                             </tr>
                         </thead>
@@ -49,6 +50,9 @@
                                         <b>{{ player.ties }}</b>
                                     </span>
                                     </div>
+                                </td>
+                                <td class="hidden-mobile">
+                                    <button [class]="getWinrateButtonColor(player.total, player.wins)" [innerHTML]="getWinrate(player.total, player.wins)"></button>
                                 </td>
                                 <td class="hidden-mobile">
                                     <div *ngFor="let characters of player.playtime" class="character-box {{ characters.character }}">

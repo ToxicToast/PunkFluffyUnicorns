@@ -62,6 +62,23 @@ export class RankingListComponent implements OnInit {
     return `${upperLeague} in ${points} Points`;
   }
 
+  getWinrate(total: number, wins: number): string {
+    const winrate = (wins / total) * 100;
+    const rounded = Math.round(winrate);
+    return `${rounded} %`;
+  }
+
+  getWinrateButtonColor(total: number, wins: number): string {
+    const winrate = (wins / total) * 100;
+    if (winrate > 50) {
+      return 'btn btn-sm btn-success';
+    } else if (winrate < 50) {
+      return 'btn btn-sm btn-danger';
+    } else {
+      return 'btn btn-sm btn-default';
+    }
+  }
+
   private getDiffIcon(difference: number): string {
     if (difference < 0) {
       return `<i class='fa fa-caret-down'></i>`;
