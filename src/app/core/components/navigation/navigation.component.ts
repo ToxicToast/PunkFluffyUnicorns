@@ -18,7 +18,7 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() { }
 
-  routeToLink(route: string) {
+  routeToLink(route: string): void {
     this.router.navigate([
       route
     ]);

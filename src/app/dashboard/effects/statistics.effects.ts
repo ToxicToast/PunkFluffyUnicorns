@@ -9,6 +9,7 @@ import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 
 import { DashboardService } from '@dashboard/services/dashboard.service';
+import { Statistics } from '@dashboard/models/statistics';
 
 import { LoadTeamStatisticsSuccess, LoadTeamStatisticsFailure, StatisticsActionTypes } from '@dashboard/actions/statistics.actions';
 
@@ -23,7 +24,7 @@ export class StatisticsEffects {
   @Effect()
   loadStatistics$ = this.actions.ofType(StatisticsActionTypes.LOAD_TEAM_STATISTICS)
     .switchMap(() => this.service.getStatistics()
-      .map(data => new LoadTeamStatisticsSuccess(data))
+      .map((data: Statistics) => new LoadTeamStatisticsSuccess(data))
       .catch(err => of(new LoadTeamStatisticsFailure())));
 
 }

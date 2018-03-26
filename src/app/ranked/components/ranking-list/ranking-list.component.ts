@@ -15,7 +15,7 @@ export class RankingListComponent implements OnInit {
   ngOnInit() {
   }
 
-  getPlayerTier(tier: string) {
+  getPlayerTier(tier: string): string {
     return `/assets/ranks/${tier}.png`;
   }
 
@@ -40,11 +40,8 @@ export class RankingListComponent implements OnInit {
     return `/assets/characters/${character}.png`;
   }
 
-  getCharacterTooltip(character: string): string {
-    if (character) {
-      return character.charAt(0).toUpperCase() + character.slice(1);
-    }
-    return character;
+  getCharacterTooltip(character: string, role: string): string {
+     return `${character.charAt(0).toUpperCase() + character.slice(1)} - ${role}`;
   }
 
   getRankedTooltip(tier: string): string {

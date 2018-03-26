@@ -1,6 +1,6 @@
 export interface Statistics {
-  Wins: number;
-  Loses: number;
-  Draws: number;
-  Total: number;
+  wins: number;
+  loses: number;
+  draws: number;
+  total: number;
 }

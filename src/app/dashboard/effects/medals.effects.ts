@@ -12,6 +12,8 @@ import { DashboardService } from '@dashboard/services/dashboard.service';
 
 import { LoadTeamMedalsSuccess, LoadTeamMedalsFailure, MedalsActionTypes } from '@dashboard/actions/medals.actions';
 
+import { Medals } from '@dashboard/models/medals';
+
 @Injectable()
 export class MedalsEffects {
 
@@ -23,7 +25,7 @@ export class MedalsEffects {
   @Effect()
   loadMedals$ = this.actions.ofType(MedalsActionTypes.LOAD_TEAM_MEDALS)
     .switchMap(() => this.service.getMedals()
-      .map(data => new LoadTeamMedalsSuccess(data))
+      .map((data: Medals) => new LoadTeamMedalsSuccess(data))
       .catch(err => of(new LoadTeamMedalsFailure())));
 
 

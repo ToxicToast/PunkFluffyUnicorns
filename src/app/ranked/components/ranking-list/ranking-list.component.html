@@ -52,7 +52,7 @@
                                 </td>
                                 <td class="hidden-mobile">
                                     <div *ngFor="let characters of player.playtime" class="character-box {{ characters.character }}">
-                                        <img [src]="getCharacterAvatar(characters.character)" class="img-responsive character-icon" placement="top" [ngbTooltip]="getCharacterTooltip(characters.character)">
+                                        <img [src]="getCharacterAvatar(characters.character)" class="img-responsive character-icon" placement="top" [ngbTooltip]="getCharacterTooltip(characters.character, characters.role)">
                                     </div>
                                 </td>
                             </tr>
