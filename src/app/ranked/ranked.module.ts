@@ -19,6 +19,7 @@ import { RankedRoutingModule } from '@ranked/ranked-routing.module';
 import { RankedIndexContainerComponent } from '@ranked/containers/ranked-index-container/ranked-index-container.component';
 import { RankingListComponent } from '@ranked/components/ranking-list/ranking-list.component';
 import { RankedShowContainerComponent } from '@ranked/containers/ranked-show-container/ranked-show-container.component';
+import { RankingProfileComponent } from '@ranked/components/ranking-profile/ranking-profile.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { RankedShowContainerComponent } from '@ranked/containers/ranked-show-con
   declarations: [
     RankedIndexContainerComponent,
     RankingListComponent,
-    RankedShowContainerComponent
+    RankedShowContainerComponent,
+    RankingProfileComponent
   ],
   exports: [
     RankedIndexContainerComponent,

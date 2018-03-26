@@ -5,13 +5,15 @@ export interface State {
   loaded: boolean;
   error: boolean;
   ranking: any[];
+  profile: any;
 }
 
 const initialState: State = {
   loading: false,
   loaded: false,
   error: false,
-  ranking: []
+  ranking: [],
+  profile: []
 };
 
 export function reducer(state = initialState, action: RankingActions): State {
@@ -38,6 +40,33 @@ export function reducer(state = initialState, action: RankingActions): State {
         loaded: true,
         error: true,
         ranking: []
+      });
+    }
+
+    case RankingActionTypes.LOAD_PLAYER_RANKING: {
+      return Object.assign({}, state, {
+        loading: false,
+        loaded: true,
+        error: true,
+        profile: []
+      });
+    }
+
+    case RankingActionTypes.LOAD_PLAYER_RANKING_SUCCESS: {
+      return Object.assign({}, state, {
+        loading: false,
+        loaded: true,
+        error: false,
+        profile: action.payload
+      });
+    }
+
+    case RankingActionTypes.LOAD_PLAYER_RANKING_FAILURE: {
+      return Object.assign({}, state, {
+        loading: false,
+        loaded: true,
+        error: true,
+        profile: []
       });
     }
     default:

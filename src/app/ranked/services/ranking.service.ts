@@ -20,4 +20,12 @@ export class RankingService {
     return this.http.get(url);
   }
 
+  getRanking(data) {
+    const { payload } = data;
+    const id = payload;
+    const endpoint = `/overwatch/tracker/ranked/${id}`;
+    const url = `${this.baseUrl}${endpoint}`;
+    return this.http.get(url);
+  }
+
 }

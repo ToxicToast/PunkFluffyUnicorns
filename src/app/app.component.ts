@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Route, ActivatedRoute, Router } from '@angular/router';
+import { Route, ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 import { Store } from '@ngrx/store';
 
@@ -21,7 +21,6 @@ import * as ranking from '@ranked/actions/ranking.actions';
 export class AppComponent {
 
   constructor(
-    private router: Router,
     private dashboardStore: Store<fromDashboard.State>,
     private rankedStore: Store<fromRanked.State>
   ) {

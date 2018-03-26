@@ -1,3 +1,5 @@
 <app-layout>
     <app-warning-bar [message]="'Player Page is still work in Progress'"></app-warning-bar>
+    <br><br>
+    <app-ranking-profile [state]="rankings$ | async" (playerUpdate)="playerUpdate($event)"></app-ranking-profile>
 </app-layout>

@@ -1,0 +1,50 @@
+<div class="cat__contents">
+    <nav class="cat__core__top-sidebar cat__core__top-sidebar--bg">
+        <div class="row">
+            <div class="col-xl-8 offset-xl-4">
+                <div class="width-100 text-center pull-right hidden-md-down">
+                    <h2>{{ state.ranking.profile[0].rank }}</h2>
+                    <p class="mb-0">Skill Rating</p>
+                </div>
+                <div class="width-100 text-center pull-right hidden-md-down">
+                    <h2>{{ state.ranking.profile[0].tier | uppercase }}</h2>
+                    <p class="mb-0">Skill Tier</p>
+                </div>
+                <h2>
+                    <span class="text-black">
+                      <strong>{{ state.ranking.profile[0].player.player_name }}</strong>
+                  </span>
+
+                </h2>
+                <p class="mb-1">
+                    {{ state.ranking.profile[0].role }}
+                </p>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-xl-4">
+            <section class="card cat__apps__profile__card">
+                <div class="card-body text-center">
+                    <a class="cat__core__avatar cat__core__avatar--border-white cat__core__avatar--110" href="javascript:void(0);">
+                        <img alt="AVATAR" [src]="state.ranking.profile[0].avatar">
+                    </a>
+                    <br>
+                    <br>
+                    <div aria-label="" class="btn-group btn-group-justified" role="group">
+                        <div class="btn-group">
+                            <button class="btn width-150 swal-btn-success" type="button" (click)="updatePlayer(state.ranking.profile[0].id)">Update</button>
+                        </div>
+                    </div>
+                    <br>
+                    <p class="text-white">
+                        Last Update:
+                        <br> {{ state.ranking.profile[0].last_update }}
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+{{ state.ranking.profile | json }}
