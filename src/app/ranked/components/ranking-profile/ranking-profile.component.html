@@ -1,6 +1,6 @@
-<app-loading-bar *ngIf="state.ranking.loading"></app-loading-bar>
-<app-error-bar *ngIf="state.ranking.loaded && state.ranking.error" [message]="'Something went wrong!'"></app-error-bar>
-<div class="cat__contents" *ngIf="state.ranking.loaded && !state.ranking.error">
+<app-loading-bar *ngIf="state.loading"></app-loading-bar>
+<app-error-bar *ngIf="state.loaded && state.error" [message]="'Something went wrong!'"></app-error-bar>
+<div class="cat__contents" *ngIf="state.loaded && !state.error">
     <nav class="cat__core__top-sidebar cat__core__top-sidebar--bg">
         <div class="row">
             <div class="col-xl-8 offset-xl-4">
@@ -50,4 +50,6 @@
     </div>
 </div>
 
-{{ state.ranking | json }}
+{{ state.loading | json }} <br>
+{{ state.loaded | json }} <br>
+{{ state.error | json }}
