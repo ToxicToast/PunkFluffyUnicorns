@@ -12,8 +12,7 @@ export class RankingListComponent implements OnInit {
 
   constructor( ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   getPlayerTier(tier: string): string {
     return `/assets/ranks/${tier}.png`;
@@ -99,6 +98,21 @@ export class RankingListComponent implements OnInit {
 
   trackByName(index, player) {
     return player.player.player_name;
+  }
+
+  calculateAverage(state, ranking) {
+    let players = 0;
+    let allRanking = 0;
+    let average = 0;
+    state.forEach(player => {
+      players += 1;
+      allRanking += player.rank;
+    });
+    average = allRanking / players;
+    if (average > ranking) {
+      return true;
+    }
+    return false;
   }
 
   private getDiffIcon(difference: number): string {

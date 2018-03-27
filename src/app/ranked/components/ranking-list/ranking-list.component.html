@@ -28,7 +28,7 @@
                         <tbody>
                             <tr *ngFor="let player of state.ranking; let i = index; trackBy: trackByName" (click)="switchPlayer.emit(player.id)">
                                 <th scope="row" class="hidden-mobile">
-                                    <button class="btn btn-sm btn-default">{{ i+1 }}</button>
+                                    <button class="btn btn-sm btn-default" [class.btn-warning]="calculateAverage(state.ranking, player.rank)">{{ i+1 }}</button>
                                 </th>
                                 <td>
                                     <img [src]="player.avatar" class="img-responsive" style="max-height: 50px; border: 1px solid #000;" alt="Player Avatar"> {{ player.player.player_name }}

@@ -8,7 +8,10 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class RankingProfileComponent implements OnInit {
 
   @Input() state: any;
-  @Output() playerUpdate = new EventEmitter<any>();
+  @Output() playerUpdate = new EventEmitter<number>();
+
+  private buttonClicked = false;
+  private buttonText = 'Update';
 
   constructor() { }
 
@@ -19,7 +22,13 @@ export class RankingProfileComponent implements OnInit {
   }
 
   updatePlayer(id) {
-
+    this.buttonText = 'Updating';
+    this.buttonClicked = true;
+    this.playerUpdate.emit(id);
+    setTimeout(() => {
+      this.buttonText = 'Update';
+      this.buttonClicked = false;
+    }, 5000);
   }
 
 

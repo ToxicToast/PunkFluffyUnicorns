@@ -45,9 +45,9 @@ export function reducer(state = initialState, action: RankingActions): State {
 
     case RankingActionTypes.LOAD_PLAYER_RANKING: {
       return Object.assign({}, state, {
-        loading: false,
-        loaded: true,
-        error: true,
+        loading: true,
+        loaded: false,
+        error: false,
         profile: []
       });
     }

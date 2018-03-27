@@ -15,7 +15,9 @@ import {
   LoadTeamRankingFailure,
   RankingActionTypes,
   LoadPlayerRankingSuccess,
-  LoadPlayerRankingFailure
+  LoadPlayerRankingFailure,
+  UpdatePlayerRankingSuccess,
+  UpdatePlayerRankingFailure
 } from '@ranked/actions/ranking.actions';
 
 @Injectable()
@@ -27,7 +29,7 @@ export class RankingEffects {
   ) { }
 
   @Effect()
-  loadRankings$ = this.actions.ofType(RankingActionTypes.LOAD_TEAM_RANKING)
+  loadRankings$ = this.actions.ofType(RankingActionTypes.LOAD_TEAM_RANKING, RankingActionTypes.UPDATE_PLAYER_RANKING_SUCCESS)
     .switchMap(() => this.service.getRankings()
       .map(data => new LoadTeamRankingSuccess(data))
       .catch(err => of(new LoadTeamRankingFailure())));
@@ -35,8 +37,12 @@ export class RankingEffects {
   @Effect()
   loadProfile$ = this.actions.ofType(RankingActionTypes.LOAD_PLAYER_RANKING)
     .switchMap((payload) => this.service.getRanking(payload)
-      .map(data => new LoadPlayerRankingSuccess(data))
+      .map(data => new LoadPlayerRankingSuccess(data[0]))
       .catch(err => of(new LoadPlayerRankingFailure())));
 
-
+  @Effect()
+  updateProfile$ = this.actions.ofType(RankingActionTypes.UPDATE_PLAYER_RANKING)
+    .switchMap((payload) => this.service.updateRanking(payload)
+      .map(() => new UpdatePlayerRankingSuccess())
+      .catch(err => of(new UpdatePlayerRankingFailure())));
 }

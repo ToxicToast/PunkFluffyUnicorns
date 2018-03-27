@@ -28,8 +28,9 @@ export class RankedShowContainerComponent implements OnInit {
   ngOnInit() {
   }
 
-  playerUpdate($event) {
-    console.error('playerUpdate', $event);
+  playerUpdate(playerId) {
+    this.store.dispatch(new ranking.UpdatePlayerRanking(playerId));
+    this.store.dispatch(new ranking.LoadPlayerRanking(playerId));
   }
 
   private dispatchProfile() {
