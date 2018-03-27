@@ -6,10 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { reducers } from '@dashboard/reducers/dashboard.reducer';
-import { MedalsEffects } from '@dashboard/effects/medals.effects';
-import { StatisticsEffects } from '@dashboard/effects/statistics.effects';
-import { TrendsEffects } from '@dashboard/effects/trends.effects';
-import { StreamersEffects } from '@dashboard/effects/streamers.effects';
+import { MedalsEffects, StatisticsEffects, TrendsEffects, StreamersEffects } from '@dashboard/effects';
 
 import { CoreModule } from '@core/core.module';
 

@@ -27,12 +27,13 @@ import { reducers, metaReducers } from '@core/reducers/index';
 import { environment } from '@env/environment';
 
 //
-import { MedalsEffects } from '@dashboard/effects/medals.effects';
+import { MedalsEffects, StatisticsEffects, TrendsEffects, StreamersEffects } from '@dashboard/effects';
+/*import { MedalsEffects } from '@dashboard/effects/medals.effects';
 import { StatisticsEffects } from '@dashboard/effects/statistics.effects';
 import { TrendsEffects } from '@dashboard/effects/trends.effects';
-import { StreamersEffects } from '@dashboard/effects/streamers.effects';
-import { RankingEffects } from '@ranked/effects/ranking.effects';
+import { StreamersEffects } from '@dashboard/effects/streamers.effects';*/
 //
+import { RankingEffects } from '@ranked/effects/ranking.effects';
 
 const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument() : [];
 const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer };
