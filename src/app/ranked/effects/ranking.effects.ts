@@ -34,7 +34,7 @@ export class RankingEffects {
 
   @Effect()
   loadProfile$ = this.actions.ofType(RankingActionTypes.LOAD_PLAYER_RANKING)
-    .switchMap((data) => this.service.getRanking(data)
+    .switchMap((payload) => this.service.getRanking(payload)
       .map(data => new LoadPlayerRankingSuccess(data))
       .catch(err => of(new LoadPlayerRankingFailure())));
 
