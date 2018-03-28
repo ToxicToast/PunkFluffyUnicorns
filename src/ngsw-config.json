@@ -2,6 +2,11 @@
     "index": "/index.html",
     "assetGroups": [{
         "name": "app",
+        "urls": [
+            "/",
+            "/dashboard",
+            "/ranked"
+        ],
         "installMode": "prefetch",
         "resources": {
             "files": [
