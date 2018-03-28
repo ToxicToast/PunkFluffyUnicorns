@@ -100,13 +100,13 @@ export class RankingListComponent implements OnInit {
     return player.player.player_name;
   }
 
-  calculateAverage(state: any, ranking: number): boolean {
+  calculateAverage(state: any, ranking: number|string): boolean {
     let players = 0;
     let allRanking = 0;
     let average = 0;
     state.forEach(player => {
       players += 1;
-      allRanking += player.rank;
+      allRanking += Number(player.rank);
     });
     average = allRanking / players;
     console.log(allRanking);
