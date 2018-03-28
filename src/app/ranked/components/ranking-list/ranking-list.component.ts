@@ -109,15 +109,11 @@ export class RankingListComponent implements OnInit {
       allRanking += Number(player.rank);
     });
     average = allRanking / players;
-    console.log(allRanking);
-    console.log('average', average);
-    console.log('player', ranking);
-    return false;
-    /*if (average > ranking) {
+    if (average > ranking) {
       return true;
     } else {
       return false;
-    }*/
+    }
   }
 
   private getDiffIcon(difference: number): string {
