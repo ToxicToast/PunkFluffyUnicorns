@@ -100,7 +100,7 @@ export class RankingListComponent implements OnInit {
     return player.player.player_name;
   }
 
-  calculateAverage(state, ranking) {
+  calculateAverage(state: any, ranking: number): boolean {
     let players = 0;
     let allRanking = 0;
     let average = 0;
@@ -109,10 +109,13 @@ export class RankingListComponent implements OnInit {
       allRanking += player.rank;
     });
     average = allRanking / players;
+    console.log('average', average);
+    console.log('player', ranking);
     if (average > ranking) {
       return true;
+    } else {
+      return false;
     }
-    return false;
   }
 
   private getDiffIcon(difference: number): string {
