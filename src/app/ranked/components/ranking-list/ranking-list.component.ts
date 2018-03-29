@@ -116,6 +116,14 @@ export class RankingListComponent implements OnInit {
     }
   }
 
+  averageToolTip(player: string, underperforming: boolean): string {
+    if (underperforming) {
+      return `${player} is underperforming!`;
+    } else {
+      return '';
+    }
+  }
+
   private getDiffIcon(difference: number): string {
     if (difference < 0) {
       return `<i class='fa fa-caret-down'></i>`;

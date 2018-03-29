@@ -1,0 +1,31 @@
+{
+    "name": "Punk Fluffy Unicorns",
+    "short_name": "PunkFluffy",
+    "lang": "en-GB",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#cb2969",
+    "background_color": "#222222",
+    "orientation": "portrait",
+    "icons": [{
+            "src": "/assets/icons/Icon_App_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/Icon_App_256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/Icon_App_384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/Icon_App_512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
