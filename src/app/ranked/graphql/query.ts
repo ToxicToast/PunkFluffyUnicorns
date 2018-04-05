@@ -21,6 +21,10 @@ export const fetchPlayers = `query fetchRanking {
       id
       name
     }
+    trends {
+      player_id
+      player_ranking
+    }
   }
 }`;
 

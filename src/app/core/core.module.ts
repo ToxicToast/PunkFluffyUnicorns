@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -36,7 +36,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavigationComponent,
     ErrorBarComponent,
     WarningBarComponent,
-    OverwatchHeroPipe
+    OverwatchHeroPipe,
+    FirstUppercase
   ],
   exports: [
     LoadingBarComponent,
@@ -46,7 +47,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavigationComponent,
     ErrorBarComponent,
     WarningBarComponent,
-    OverwatchHeroPipe
+    OverwatchHeroPipe,
+    FirstUppercase
   ],
   providers: [
     OverwatchService

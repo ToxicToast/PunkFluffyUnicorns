@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
 
 import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
@@ -37,7 +37,7 @@ import { RankingEffects } from '@ranked/effects/ranking.effects';
 
 const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument() : [];
 const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer };
-const graphqlEndpoint = environment.production ? 'http://backendtoxic.local/graphql' : 'https://backend.toxictoast.de/graphql';
+const graphqlEndpoint = !environment.production ? 'http://backendtoxic.local/graphql' : 'https://backend.toxictoast.de/graphql';
 
 @NgModule({
   declarations: [

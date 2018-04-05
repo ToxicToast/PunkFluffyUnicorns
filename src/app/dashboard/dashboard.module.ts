@@ -19,8 +19,8 @@ import { TeamStatsComponent } from '@dashboard/components/team-stats/team-stats.
 import { TeamTrendsComponent } from '@dashboard/components/team-trends/team-trends.component';
 import { TeamMedalsComponent } from '@dashboard/components/team-medals/team-medals.component';
 import { TeamStreamersComponent } from '@dashboard/components/team-streamers/team-streamers.component';
-import { TeamKpdComponent } from './Components/team-kpd/team-kpd.component';
-import { TeamHeroesComponent } from './Components/team-heroes/team-heroes.component';
+import { TeamKpdComponent } from '@dashboard/components/team-kpd/team-kpd.component';
+import { TeamHeroesComponent } from '@dashboard/components/team-heroes/team-heroes.component';
 
 
 @NgModule({
@@ -29,7 +29,7 @@ import { TeamHeroesComponent } from './Components/team-heroes/team-heroes.compon
     NgxChartsModule,
     DashboardRoutingModule,
     StoreModule.forFeature('dashboard', reducers),
-    // EffectsModule.forFeature([MedalsEffects, StatisticsEffects, TrendsEffects, StreamersEffects]),
+    EffectsModule.forFeature([]),
     CoreModule
   ],
   declarations: [
