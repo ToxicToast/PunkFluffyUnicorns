@@ -15,7 +15,7 @@ export class Roles {
 
   setMainRole(name: string, champions: any): string {
     if (name === 'ToxicToast') {
-      return `<b>${OverwatchRoles.ROLE_OFFENSE} - ${OverwatchRoles.ROLE_DEFENSE}</b>`;
+      return this.setCustomRole(`${OverwatchRoles.ROLE_OFFENSE} - ${OverwatchRoles.ROLE_DEFENSE}`);
     }
     //
     const roles = [];
@@ -51,5 +51,9 @@ export class Roles {
       const secondary = OverwatchRoles.ROLE_SUPPORT;
     }
     return role;
+  }
+
+  private setCustomRole(role) {
+    return `<b>${role}</b>`;
   }
 }
