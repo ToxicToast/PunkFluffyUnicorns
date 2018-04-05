@@ -4,10 +4,7 @@ import { Route, ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Store } from '@ngrx/store';
 
 import * as fromDashboard from '@dashboard/reducers/dashboard.reducer';
-import * as medals from '@dashboard/actions/medals.actions';
-import * as statistics from '@dashboard/actions/statistics.actions';
-import * as trends from '@dashboard/actions/trends.actions';
-import * as streamers from '@dashboard/actions/streamers.actions';
+import * as dashboard from '@dashboard/actions/dashboard.actions';
 //
 import * as fromRanked from '@ranked/reducers/ranked.reducer';
 import * as ranking from '@ranked/actions/ranking.actions';
@@ -31,10 +28,7 @@ export class AppComponent {
   }
 
   private dispatchDashboard() {
-    this.dashboardStore.dispatch(new statistics.LoadTeamStatistics());
-    this.dashboardStore.dispatch(new medals.LoadTeamMedals());
-    this.dashboardStore.dispatch(new trends.LoadTeamTrends());
-    this.dashboardStore.dispatch(new streamers.LoadTeamStreamers());
+    this.dashboardStore.dispatch(new dashboard.LoadDashboard());
   }
 
   private dispatchRanked() {

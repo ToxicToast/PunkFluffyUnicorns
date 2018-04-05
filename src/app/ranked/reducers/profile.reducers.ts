@@ -4,40 +4,42 @@ export interface State {
   loading: boolean;
   loaded: boolean;
   error: boolean;
-  ranking: any[];
+  profile: any;
 }
 
 const initialState: State = {
   loading: false,
   loaded: false,
   error: false,
-  ranking: [],
+  profile: []
 };
 
 export function reducer(state = initialState, action: RankingActions): State {
   switch (action.type) {
-    case RankingActionTypes.LOAD_TEAM_RANKING: {
+    case RankingActionTypes.LOAD_PLAYER_RANKING: {
       return Object.assign({}, state, {
         loading: true,
         loaded: false,
         error: false,
-        ranking: []
+        profile: []
       });
     }
-    case RankingActionTypes.LOAD_TEAM_RANKING_SUCCESS: {
+
+    case RankingActionTypes.LOAD_PLAYER_RANKING_SUCCESS: {
       return Object.assign({}, state, {
         loading: false,
         loaded: true,
         error: false,
-        ranking: action.payload.rankingQuery
+        profile: action.payload[0] || []
       });
     }
-    case RankingActionTypes.LOAD_TEAM_RANKING_FAILURE: {
+
+    case RankingActionTypes.LOAD_PLAYER_RANKING_FAILURE: {
       return Object.assign({}, state, {
         loading: false,
         loaded: true,
         error: true,
-        ranking: []
+        profile: []
       });
     }
     default:

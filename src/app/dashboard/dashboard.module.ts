@@ -6,7 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { reducers } from '@dashboard/reducers/dashboard.reducer';
-import { MedalsEffects, StatisticsEffects, TrendsEffects, StreamersEffects } from '@dashboard/effects';
+// import { Dashboard } from '@dashboard/effects';
 
 import { CoreModule } from '@core/core.module';
 
@@ -19,6 +19,8 @@ import { TeamStatsComponent } from '@dashboard/components/team-stats/team-stats.
 import { TeamTrendsComponent } from '@dashboard/components/team-trends/team-trends.component';
 import { TeamMedalsComponent } from '@dashboard/components/team-medals/team-medals.component';
 import { TeamStreamersComponent } from '@dashboard/components/team-streamers/team-streamers.component';
+import { TeamKpdComponent } from './Components/team-kpd/team-kpd.component';
+import { TeamHeroesComponent } from './Components/team-heroes/team-heroes.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { TeamStreamersComponent } from '@dashboard/components/team-streamers/tea
     TeamStatsComponent,
     TeamTrendsComponent,
     TeamMedalsComponent,
-    TeamStreamersComponent
+    TeamStreamersComponent,
+    TeamKpdComponent,
+    TeamHeroesComponent
   ],
   providers: [
     DashboardService

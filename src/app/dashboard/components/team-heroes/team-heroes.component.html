@@ -1,0 +1,50 @@
+<section class="card">
+    <div class="card-header ui-sortable-handle">
+        <h5 class="mb-0 text-black">
+            <strong>Team Most Played Heroes</strong>
+        </h5>
+    </div>
+    <div class="card-body">
+        <app-loading-bar *ngIf="state.loading"></app-loading-bar>
+        <app-error-bar *ngIf="state.loaded && state.error"></app-error-bar>
+        <div class="row" *ngIf="state.loaded && !state.error">
+            <ng-container *ngFor="let offense of getHeroes('offense'); let i = index; trackBy: trackByCharacterName;">
+                <ng-container *ngTemplateOutlet="heroContainer;context:{role: 'Offense', index: i, name: offense.character_name, player: offense.player.name }"></ng-container>
+            </ng-container>
+
+            <ng-container *ngFor="let defense of getHeroes('defense'); let i = index; trackBy: trackByCharacterName;">
+                <ng-container *ngTemplateOutlet="heroContainer;context:{role: 'Defense', index: i, name: defense.character_name, player: defense.player.name }"></ng-container>
+            </ng-container>
+
+            <ng-container *ngFor="let support of getHeroes('support'); let i = index; trackBy: trackByCharacterName;">
+                <ng-container *ngTemplateOutlet="heroContainer;context:{role: 'Support', index: i, name: support.character_name, player: support.player.name }"></ng-container>
+            </ng-container>
+
+            <ng-container *ngFor="let tank of getHeroes('tank'); let i = index; trackBy: trackByCharacterName;">
+                <ng-container *ngTemplateOutlet="heroContainer;context:{role: 'Tank', index: i, name: tank.character_name, player: tank.player.name }"></ng-container>
+            </ng-container>
+        </div>
+    </div>
+</section>
+
+
+<ng-template let-role="role" let-index="index" let-name="name" let-player="player" #heroContainer>
+    <div class="col-xl-3" *ngIf="index === 0">
+        <div class="cat__core__step cat__core__step--default mb-4 heroBox">
+            <span class="cat__core__step__digit">
+                <div class="character-box {{ name }}" style="max-width: 108px;">
+                    <img [src]="getHeroImage(name)" class="img-responsive character-icon" style="max-height: 100px; max-width: 104px;" placement="top" ngbTooltip="getHeroTooltip(name, role)" alt="Player Playtime Character">
+                </div>
+            </span>
+            <div class="cat__core__step__desc">
+                <span class="cat__core__step__title" style="margin-left: 50px;">{{ role }}</span>
+                <p style="margin-left: 125px;">{{ name | overwatchHero }}</p>
+                <p style="margin-left: 125px;">{{ player }}</p>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #noHero>
+    <app-error-bar></app-error-bar>
+</ng-template>

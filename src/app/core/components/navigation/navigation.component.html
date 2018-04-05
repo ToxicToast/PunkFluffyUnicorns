@@ -4,13 +4,13 @@
     </div>-->
     <ul class="cat__menu-left__list cat__menu-left__list--root">
         <li class="cat__menu-left__item">
-            <a (click)="routeToLink('dashboard')">
+            <a routerLink="/dashboard" [routerLinkActive]="['active--link']">
                 <span class="cat__menu-left__icon icmn-home"></span> Dashboard
             </a>
         </li>
         <li class="cat__menu-left__divider"></li>
         <li class="cat__menu-left__item">
-            <a (click)="routeToLink('ranked')">
+            <a routerLink="/ranked" [routerLinkActive]="['active--link']">
                 <span class="cat__menu-left__icon icmn-star-full"></span> Ranked
             </a>
         </li>

@@ -4,6 +4,11 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { RouterModule } from "@angular/router";
+
+import { ApolloModule, Apollo } from 'apollo-angular';
+import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -26,36 +31,29 @@ import { reducers, metaReducers } from '@core/reducers/index';
 
 import { environment } from '@env/environment';
 
-//
-import { MedalsEffects, StatisticsEffects, TrendsEffects, StreamersEffects } from '@dashboard/effects';
-/*import { MedalsEffects } from '@dashboard/effects/medals.effects';
-import { StatisticsEffects } from '@dashboard/effects/statistics.effects';
-import { TrendsEffects } from '@dashboard/effects/trends.effects';
-import { StreamersEffects } from '@dashboard/effects/streamers.effects';*/
-//
+import { DashboardEffects } from '@dashboard/effects/dashboard.effects';
 import { RankingEffects } from '@ranked/effects/ranking.effects';
+
 
 const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument() : [];
 const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer };
+const graphqlEndpoint = environment.production ? 'http://backendtoxic.local/graphql' : 'https://backend.toxictoast.de/graphql';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
-    EffectsModule.forRoot([
-      MedalsEffects,
-      StatisticsEffects,
-      TrendsEffects,
-      StreamersEffects,
-      RankingEffects
-    ]),
+    EffectsModule.forRoot([ DashboardEffects, RankingEffects ]),
     StoreDevTools,
     HttpClientModule,
+    ApolloModule,
+    HttpLinkModule,
     AppRoutingModule,
     CoreModule,
     AdminModule,
@@ -69,4 +67,16 @@ const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterS
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(
+    apollo: Apollo,
+    httpLink: HttpLink
+  ) {
+    apollo.create({
+      link: httpLink.create({ uri: graphqlEndpoint }),
+      cache: new InMemoryCache()
+    });
+  }
+
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from "@angular/router";
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -14,6 +15,9 @@ import { NavigationComponent } from '@core/components/navigation/navigation.comp
 import { ErrorBarComponent } from '@core/components/error-bar/error-bar.component';
 import { WarningBarComponent } from '@core/components/warning-bar/warning-bar.component';
 
+import { OverwatchHeroPipe } from '@core/pipes/overwatch-hero.pipe';
+import { FirstUppercase } from '@core/pipes/FirstUppercase.pipe';
+
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -21,6 +25,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     PerfectScrollbarModule
   ],
   declarations: [
@@ -30,7 +35,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LayoutComponent,
     NavigationComponent,
     ErrorBarComponent,
-    WarningBarComponent
+    WarningBarComponent,
+    OverwatchHeroPipe
   ],
   exports: [
     LoadingBarComponent,
@@ -39,7 +45,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LayoutComponent,
     NavigationComponent,
     ErrorBarComponent,
-    WarningBarComponent
+    WarningBarComponent,
+    OverwatchHeroPipe
   ],
   providers: [
     OverwatchService

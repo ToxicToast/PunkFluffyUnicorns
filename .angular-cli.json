@@ -52,6 +52,8 @@
             "scss/modules/pages/common/pages.cleanui.css",
             "scss/modules/ecommerce/common/ecommerce.cleanui.css",
             "scss/modules/apps/common/apps.cleanui.css",
+            "../node_modules/rpg-awesome/scss/rpg-awesome.scss",
+            "scss/variables.scss",
             "styles.scss"
         ],
         "scripts": [],

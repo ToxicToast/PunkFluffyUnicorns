@@ -1,6 +1,8 @@
 <app-layout>
-    <app-team-stats [state]="stats$ | async"></app-team-stats>
-    <app-team-medals [state]="medals$ | async"></app-team-medals>
-    <app-team-trends [state]="trends$ | async"></app-team-trends>
-    <app-team-streamers [state]="streamers$ | async"></app-team-streamers>
+    <app-team-stats [state]="dashboard$ | async"></app-team-stats>
+    <app-team-medals [state]="dashboard$ | async"></app-team-medals>
+    <app-team-kpd [state]="dashboard$ | async"></app-team-kpd>
+    <app-team-heroes [state]="dashboard$ | async"></app-team-heroes>
+    <!--<app-team-trends [state]="dashboard$ | async"></app-team-trends>-->
+    <!--<app-team-streamers [state]="dashboard$ | async"></app-team-streamers>-->
 </app-layout>

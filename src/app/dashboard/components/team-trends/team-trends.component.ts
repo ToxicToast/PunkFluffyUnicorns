@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Chart, ChartSeries } from '@dashboard/models/chart';
+// import { Chart, ChartSeries } from '@dashboard/models/chart';
 
 @Component({
   selector: 'app-team-trends',

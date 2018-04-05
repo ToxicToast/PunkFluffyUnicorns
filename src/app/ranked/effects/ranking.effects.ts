@@ -29,20 +29,20 @@ export class RankingEffects {
   ) { }
 
   @Effect()
-  loadRankings$ = this.actions.ofType(RankingActionTypes.LOAD_TEAM_RANKING, RankingActionTypes.UPDATE_PLAYER_RANKING_SUCCESS)
-    .switchMap(() => this.service.getRankings()
-      .map(data => new LoadTeamRankingSuccess(data))
+  loadRankings$ = this.actions.ofType(RankingActionTypes.LOAD_TEAM_RANKING)
+    .switchMap(() => this.service.getRanked()
+      .map(data => new LoadTeamRankingSuccess(data.data))
       .catch(err => of(new LoadTeamRankingFailure())));
 
   @Effect()
   loadProfile$ = this.actions.ofType(RankingActionTypes.LOAD_PLAYER_RANKING)
-    .switchMap((payload) => this.service.getRanking(payload)
-      .map(data => new LoadPlayerRankingSuccess(data[0]))
+    .switchMap((payload) => this.service.getProfile(payload)
+      .map(data => new LoadPlayerRankingSuccess(data.data))
       .catch(err => of(new LoadPlayerRankingFailure())));
-
+/*
   @Effect()
   updateProfile$ = this.actions.ofType(RankingActionTypes.UPDATE_PLAYER_RANKING)
     .switchMap((payload) => this.service.updateRanking(payload)
       .map(() => new UpdatePlayerRankingSuccess())
-      .catch(err => of(new UpdatePlayerRankingFailure())));
+      .catch(err => of(new UpdatePlayerRankingFailure())));*/
 }

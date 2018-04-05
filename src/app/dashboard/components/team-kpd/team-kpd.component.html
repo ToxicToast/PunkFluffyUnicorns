@@ -1,0 +1,48 @@
+<section class="card">
+    <div class="card-header ui-sortable-handle">
+        <h5 class="mb-0 text-black">
+            <strong>Team KPD</strong>
+        </h5>
+    </div>
+    <div class="card-body">
+        <app-loading-bar *ngIf="state.loading"></app-loading-bar>
+        <app-error-bar *ngIf="state.loaded && state.error"></app-error-bar>
+        <div class="row" *ngIf="state.loaded && !state.error">
+            <div class="col-xl-4">
+                <div class="cat__core__step cat__core__step--success mb-4">
+                    <span class="cat__core__step__digit">
+                      <i class="ra ra-sword"></i>
+                    </span>
+                    <div class="cat__core__step__desc">
+                        <span class="cat__core__step__title">Kills</span>
+                        <p [innerHTML]="getKPD('kills')"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="cat__core__step cat__core__step--danger mb-4">
+                    <span class="cat__core__step__digit">
+                        <i class="ra ra-skull"></i>
+                    </span>
+                    <div class="cat__core__step__desc">
+                        <span class="cat__core__step__title">Deaths</span>
+                        <p [innerHTML]="getKPD('deaths')"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="cat__core__step cat__core__step--primary mb-4">
+                    <span class="cat__core__step__digit">
+                        <i class="ra ra-double-team"></i>
+                    </span>
+                    <div class="cat__core__step__desc">
+                        <span class="cat__core__step__title">Kills per Death</span>
+                        <p [innerHTML]="getKPD('kpd')"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

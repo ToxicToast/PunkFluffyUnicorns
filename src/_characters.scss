@@ -16,78 +16,107 @@
 .hanzo {
     @include charactersBG(#938848);
 }
+
 .junkrat {
     @include charactersBG(#d39308);
 }
+
 .soldier76 {
     @include charactersBG(#5d81eb);
 }
+
 .mccree {
-     @include charactersBG(#c83c3c);
+    @include charactersBG(#c83c3c);
 }
+
 .widowmaker {
     @include charactersBG(#7878d4);
 }
+
 .genji {
     @include charactersBG(#84fe01);
 }
+
 .moira {
     @include charactersBG(#b3365d);
 }
+
 .pharah {
     @include charactersBG(#2178e9);
 }
+
 .winston {
     @include charactersBG(#8991a6);
 }
+
 .tracer {
     @include charactersBG(#f8911b);
 }
+
 .lucio {
     @include charactersBG(#8bec22);
 }
+
 .torbjorn {
     @include charactersBG(#ff6200);
 }
+
 .brigitte {
     @include charactersBG(#f3b23a);
 }
+
 .mei {
     @include charactersBG(#9adbf4);
 }
+
 .reaper {
     @include charactersBG(#a49d86);
 }
+
 .bastion {
     @include charactersBG(#6e994d);
 }
+
 .symetra {
     @include charactersBG(#5cecff);
 }
+
 .reinhardt {
     @include charactersBG(#aa958e);
 }
+
 .zenyatta {
     @include charactersBG(#c79c00);
 }
+
 .ana {
     @include charactersBG(#2178e9);
 }
+
 .orisa {
     @include charactersBG(#bcc84a);
 }
+
 .sombra {
     @include charactersBG(#a07dc8);
 }
+
 .dva {
     @include charactersBG(#ff7fd1);
 }
+
 .zarya {
     @include charactersBG(#f571a8);
 }
+
 .mercy {
     @include charactersBG(#ffe16c);
 }
+
 .doomfist {
     @include charactersBG(#ddccac);
+}
+
+.roadhog {
+    @include charactersBG(#c19477);
 }

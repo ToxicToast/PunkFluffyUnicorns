@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -19,9 +19,7 @@ export class NavigationComponent implements OnInit {
   ngOnInit() { }
 
   routeToLink(route: string): void {
-    this.router.navigate([
-      route
-    ]);
+    this.router.navigate([route]);
   }
 
 }

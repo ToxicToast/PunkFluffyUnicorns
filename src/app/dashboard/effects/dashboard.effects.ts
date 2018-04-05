@@ -9,12 +9,17 @@ import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 
 import { DashboardService } from '@dashboard/services/dashboard.service';
-import { Statistics } from '@dashboard/models/statistics';
 
-import { LoadTeamStatisticsSuccess, LoadTeamStatisticsFailure, StatisticsActionTypes } from '@dashboard/actions/statistics.actions';
+import {
+  LoadDashboardSuccess,
+  LoadDashboardFailure,
+  DashboardActionTypes
+} from '@dashboard/actions/dashboard.actions';
+
+// import { Dashboard } from '@dashboard/models/medals';
 
 @Injectable()
-export class StatisticsEffects {
+export class DashboardEffects {
 
   constructor(
     private actions: Actions,
@@ -22,9 +27,9 @@ export class StatisticsEffects {
   ) { }
 
   @Effect()
-  loadStatistics$ = this.actions.ofType(StatisticsActionTypes.LOAD_TEAM_STATISTICS)
-    .switchMap(() => this.service.getStatistics()
-      .map((data: Statistics) => new LoadTeamStatisticsSuccess(data))
-      .catch(err => of(new LoadTeamStatisticsFailure())));
+  loadDashboard$ = this.actions.ofType(DashboardActionTypes.LOAD_DASHBOARD)
+    .switchMap(() => this.service.getDashboard()
+      .map((data: any) => new LoadDashboardSuccess(data.data))
+      .catch(err => of(new LoadDashboardFailure(err))));
 
 }
