@@ -37,7 +37,7 @@ import { RankingEffects } from '@ranked/effects/ranking.effects';
 
 const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument() : [];
 const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer };
-const graphqlEndpoint = environment.production ? 'http://backendtoxic.local/graphql' : 'https://backend.toxictoast.de/graphql';
+const graphqlEndpoint = !environment.production ? 'http://backendtoxic.local/graphql' : 'https://backend.toxictoast.de/graphql';
 
 @NgModule({
   declarations: [
