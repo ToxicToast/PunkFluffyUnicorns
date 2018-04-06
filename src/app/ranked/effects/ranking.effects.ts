@@ -47,7 +47,7 @@ export class RankingEffects {
       .catch(err => of(new UpdatePlayerRankingFailure())));*/
 
   private getData(payload) {
-    console.error(payload.data);
+    // console.error(payload.data);
     return payload.data;
   }
 }
