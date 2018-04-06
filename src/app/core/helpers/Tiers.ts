@@ -24,12 +24,7 @@ export class Tiers {
   }
 
   compareTiers(isTier: string, shouldTier: string): string {
-    console.log(isTier, shouldTier);
-    if (isTier === shouldTier) {
-      return isTier;
-    } else {
-      return shouldTier;
-    }
+    return (isTier === shouldTier) ? isTier : shouldTier;
   }
 
   getTier(): string {

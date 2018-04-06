@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Trends } from '@core/dataContracts/Trends.contract';
 import { RankingService } from '@ranked/services/ranking.service';
 
 @Component({
@@ -22,7 +23,7 @@ export class RankingListComponent implements OnInit {
     return `/assets/ranks/${tierState}.png`;
   }
 
-  getRankingWithDiff(ranking: number, trends: any[]): string {
+  getRankingWithDiff(ranking: number, trends: Trends[]): string {
     let returnString = '';
     //
     if (trends.length > 0) {
@@ -39,7 +40,7 @@ export class RankingListComponent implements OnInit {
     return returnString;
   }
 
-  getRankingWithDiffClass(ranking: number, trends: any[]): string {
+  getRankingWithDiffClass(ranking: number, trends: Trends[]): string {
     let returnString = 'always-hide';
     if (trends.length > 0) {
       const lastRank = trends[0];

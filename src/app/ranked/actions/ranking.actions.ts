@@ -1,5 +1,7 @@
 import { Action } from '@ngrx/store';
 
+import { RankingQuery } from '@core/dataContracts/RankingQuery.contract';
+
 export enum RankingActionTypes {
 LOAD_TEAM_RANKING = '[Team] Load Ranking',
 LOAD_TEAM_RANKING_SUCCESS = '[Team] Load Ranking - Success',
