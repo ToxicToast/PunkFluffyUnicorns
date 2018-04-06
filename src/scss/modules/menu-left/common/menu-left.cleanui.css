@@ -65,7 +65,7 @@
 
 .cat__menu-left__logo {
     width: 17.85rem;
-    height: 4.64rem;
+    height: 16.64rem;
     display: inline-block;
     background: #0e0b20;
     padding: 1rem 1.28rem;
@@ -76,7 +76,7 @@
 }
 
 .cat__menu-left__logo img {
-    max-height: 2.5rem;
+    max-height: 15.5rem;
     max-width: 90%;
     vertical-align: bottom;
 }

@@ -1,7 +1,7 @@
 <div class="cat__menu-left">
-    <!--<div class="cat__menu-left__logo">
-        Logo
-    </div>-->
+    <div class="cat__menu-left__logo">
+        <img src="/assets/logo.png" alt="LOGO" class="center-block">
+    </div>
     <ul class="cat__menu-left__list cat__menu-left__list--root">
         <li class="cat__menu-left__item">
             <a routerLink="/dashboard" [routerLinkActive]="['active--link']">
@@ -12,6 +12,12 @@
         <li class="cat__menu-left__item">
             <a routerLink="/ranked" [routerLinkActive]="['active--link']">
                 <span class="cat__menu-left__icon icmn-star-full"></span> Ranked
+            </a>
+        </li>
+        <li class="cat__menu-left__divider"></li>
+        <li class="cat__menu-left__item">
+            <a routerLink="/" [routerLinkActive]="['active--link']">
+                <span class="cat__menu-left__icon fa fa-gamepad"></span> VODs
             </a>
         </li>
     </ul>
