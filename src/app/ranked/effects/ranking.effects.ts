@@ -9,6 +9,7 @@ import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 
 import { RankingService } from '@ranked/services/ranking.service';
+import { Ranking } from '@core/dataContracts/Ranking.contract';
 
 import {
   LoadTeamRankingSuccess,
@@ -31,7 +32,7 @@ export class RankingEffects {
   @Effect()
   loadRankings$ = this.actions.ofType(RankingActionTypes.LOAD_TEAM_RANKING)
     .switchMap(() => this.service.getRanked()
-      .map(data => new LoadTeamRankingSuccess(this.getData(data)))
+      .map(data => new LoadTeamRankingSuccess(this.getRankingQuery(data)))
       .catch(err => of(new LoadTeamRankingFailure())));
 
   @Effect()
@@ -47,7 +48,13 @@ export class RankingEffects {
       .catch(err => of(new UpdatePlayerRankingFailure())));*/
 
   private getData(payload) {
-    // console.error(payload.data);
+    console.error(payload.data);
     return payload.data;
   }
+
+  private getRankingQuery(payload): Ranking[] {
+    const { rankingQuery } = payload.data;
+    return rankingQuery;
+  }
+
 }

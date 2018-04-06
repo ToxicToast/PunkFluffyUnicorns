@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class OverwatchHeroPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return this.transformName(value);
+  transform(champion: string): string {
+    return this.transformName(champion);
   }
 
   private transformName(name: string): string {

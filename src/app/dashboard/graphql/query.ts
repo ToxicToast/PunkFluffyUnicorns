@@ -1,6 +1,7 @@
 export const fetchDashboard = `query fetchDashboard {
   rankingQuery {
     player_id
+    player_ranking
     player_games_won
     player_games_draw
     player_games_lose
@@ -18,6 +19,10 @@ export const fetchDashboard = `query fetchDashboard {
       player_games_won
       player_games_draw
       player_games_lose
+    }
+    player {
+      id
+      name
     }
   }
   playtimeQuery {

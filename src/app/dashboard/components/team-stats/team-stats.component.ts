@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { Tiers } from '@core/helpers/Tiers';
+
 @Component({
   selector: 'app-team-stats',
   templateUrl: './team-stats.component.html',
@@ -37,6 +39,75 @@ export class TeamStatsComponent implements OnInit {
     } else {
       return 0;
     }
+  }
+
+  getAverageRanking(): string {
+    const { overwatchRanking } = this.state;
+    let players = 0;
+    let total = 0;
+    //
+    overwatchRanking.forEach(ranking => {
+      players++;
+      total += ranking.player_ranking;
+    });
+    const average = Number(total / players).toFixed(0);
+    return average;
+  }
+
+  getAverageTier() {
+    const average = this.getAverageRanking();
+    const tiers = new Tiers();
+    tiers.setRanking(Number(average));
+    const currentTier = tiers.getCurrentTier();
+    const formated = `${currentTier.charAt(0).toUpperCase() + currentTier.slice(1)}`;
+    return formated;
+  }
+
+  getAverageTierImage(): string {
+    const average = this.getAverageRanking();
+    const tiers = new Tiers();
+    tiers.setRanking(Number(average));
+    return `/assets/ranks/${tiers.getCurrentTier()}.png`;
+  }
+
+  getMostKills(): string {
+    const killArray = [];
+    const { overwatchRanking } = this.state;
+    overwatchRanking.forEach(ranking => {
+      killArray.push({
+        player_id: ranking.player_id,
+        player_name: ranking.player.name,
+        value: ranking.player_kills
+      });
+    });
+    const sorted = killArray.sort(this.sortByValue);
+    const most = sorted[0];
+    return `${most.player_name} - ${most.value} Kills`;
+  }
+
+  getMostDeaths() {
+    const deathArray = [];
+    const { overwatchRanking } = this.state;
+    overwatchRanking.forEach(ranking => {
+      deathArray.push({
+        player_id: ranking.player_id,
+        player_name: ranking.player.name,
+        value: ranking.player_deaths
+      });
+    });
+    const sorted = deathArray.sort(this.sortByValue);
+    const most = sorted[0];
+    return `${most.player_name} - ${most.value} Deaths`;
+  }
+
+  private sortByValue(a, b) {
+    if (a.value < b.value) {
+      return 1;
+    }
+    if (a.value > b.value) {
+      return -1;
+    }
+    return 0;
   }
 
 }

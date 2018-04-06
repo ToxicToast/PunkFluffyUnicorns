@@ -29,7 +29,7 @@ export function reducer(state = initialState, action: RankingActions): State {
         loading: false,
         loaded: true,
         error: false,
-        ranking: action.payload.rankingQuery
+        ranking: action.payload
       });
     }
     case RankingActionTypes.LOAD_TEAM_RANKING_FAILURE: {
