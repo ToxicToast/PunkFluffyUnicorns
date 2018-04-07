@@ -20,6 +20,7 @@ import { AdminModule } from '@admin/admin.module';
 import { DashboardModule } from '@dashboard/dashboard.module';
 import { CoreModule } from '@core/core.module';
 import { RankedModule } from '@ranked/ranked.module';
+import { VodModule } from '@vod/vod.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -60,6 +61,7 @@ const graphqlEndpoint = 'https://backend.toxictoast.de/graphql';
     AdminModule,
     DashboardModule,
     RankedModule,
+    VodModule,
     NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],

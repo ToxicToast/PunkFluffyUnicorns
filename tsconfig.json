@@ -24,6 +24,7 @@
       "@admin/*": ["app/admin/*"],
       "@core/*": ["app/core/*"],
       "@ranked/*": ["app/ranked/*"],
+      "@vod/*": ["app/vod/*"],
     }
   }
 }
