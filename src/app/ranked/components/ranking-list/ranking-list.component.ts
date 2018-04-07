@@ -85,7 +85,8 @@ export class RankingListComponent implements OnInit {
 
   getWinrate(total: number, wins: number): string {
     const winrate = (wins / total) * 100;
-    const rounded = Math.round(winrate);
+    // const rounded = Math.round(winrate);
+    const rounded = Number(winrate).toFixed(2);
     return `${rounded} %`;
   }
 
