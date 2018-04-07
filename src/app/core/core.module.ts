@@ -17,6 +17,7 @@ import { WarningBarComponent } from '@core/components/warning-bar/warning-bar.co
 
 import { OverwatchHeroPipe } from '@core/pipes/overwatch-hero.pipe';
 import { FirstUppercase } from '@core/pipes/FirstUppercase.pipe';
+import { ChangelogComponent } from '@core/components/changelog/changelog.component';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -37,7 +38,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ErrorBarComponent,
     WarningBarComponent,
     OverwatchHeroPipe,
-    FirstUppercase
+    FirstUppercase,
+    ChangelogComponent
   ],
   exports: [
     LoadingBarComponent,
@@ -48,7 +50,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ErrorBarComponent,
     WarningBarComponent,
     OverwatchHeroPipe,
-    FirstUppercase
+    FirstUppercase,
+    ChangelogComponent
   ],
   providers: [
     OverwatchService
