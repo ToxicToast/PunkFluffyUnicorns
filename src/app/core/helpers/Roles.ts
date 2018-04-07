@@ -18,13 +18,15 @@ export class Roles {
     if (name === 'ToxicToast') {
       return this.setCustomRole(`${OverwatchRoles.ROLE_DPS}`);
     }
-    /*if (name === 'BeLoor') {
-      return `${OverwatchRoles.ROLE_DPS}`;
+    if (name === 'DragonMG') {
+      return this.setCustomRole(`${OverwatchRoles.ROLE_SUPPORT}`);
     }
-    if (name === 'Anti') {
-      return `${OverwatchRoles.ROLE_FLEX} - ${OverwatchRoles.ROLE_DPS}`;
-    }*/
-    //
+    if (name === 'nerdxchan') {
+      return this.setCustomRole(`${OverwatchRoles.ROLE_TANK}`);
+    }
+    if (name === 'BeLoor' || name === 'Anti' || name === 'HanterGER') {
+      return this.setCustomRole(`${OverwatchRoles.ROLE_FLEX}`);
+    }
     const roles = [];
     champions.forEach(champion => {
       if (champion.character_time > 0) {
@@ -35,33 +37,6 @@ export class Roles {
     set.forEach(element => {
       roles.push(element);
     });
-    /*if (set.size === 1) {
-      const role = this.setRole(roles[0]);
-      return `${role}`;
-    } else if (set.size === 3) {
-      return OverwatchRoles.ROLE_FLEX;
-    } else if (set.size === 2) {
-      const main = roles[0];
-      const second = roles[1];
-      console.log(main, second, name);
-      if (
-        (main === OverwatchRoles.ROLE_OFFENSE || main === OverwatchRoles.ROLE_DEFENSE)
-        &&
-        (second === OverwatchRoles.ROLE_OFFENSE || second === OverwatchRoles.ROLE_DEFENSE)) {
-        return OverwatchRoles.ROLE_DPS;
-      } else {
-        const secondary = this.setRole(roles[0]);
-        return `${OverwatchRoles.ROLE_FLEX} - ${secondary}`;
-      }
-    }*/
-    // console.log(this.getRoleSet(set, roles));
-    /*if (set.size > 1) {
-      const secondary = this.setRole(roles[0]);
-      return `${OverwatchRoles.ROLE_FLEX} - ${secondary}`;
-    } else {
-      const role = this.setRole(roles[0]);
-      return `${role}`;
-    }*/
     return this.getRoleSet(set, roles);
   }
 

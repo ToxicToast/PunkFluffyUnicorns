@@ -57,24 +57,8 @@ export class RankingService {
     return roles.setMainRole(name, champions);
   }
 
-  /*getRankings() {
-    const endpoint = '/overwatch/tracker/ranked';
-    const url = `${this.baseUrl}${endpoint}`;
-    // return this.http.get(url);
-    const query = this.apollo.query({ query: gql`${fetchPlayers}` }).subscribe(console.error);
-    console.error(query);
-    //
-    return this.http.get(url);
-  }
 
-  getRanking(data) {
-    const { payload } = data;
-    const id = payload;
-    const endpoint = `/overwatch/tracker/ranked/${id}`;
-    const url = `${this.baseUrl}${endpoint}`;
-    return this.http.get(url);
-  }
-
+ /*
   updateRanking(data) {
     const { payload } = data;
     const id = payload;
