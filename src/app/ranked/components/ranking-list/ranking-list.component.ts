@@ -85,13 +85,13 @@ export class RankingListComponent implements OnInit {
 
   getWinrate(total: number, wins: number): string {
     const winrate = (wins / total) * 100;
-    // const rounded = Math.round(winrate);
-    const rounded = Number(winrate).toFixed(2);
+    const rounded = Math.round(winrate);
     return `${rounded} %`;
   }
 
   getWinrateButtonColor(total: number, wins: number): string {
     const winrate = (wins / total) * 100;
+    const rounded = Math.round(winrate);
     if (winrate > 50) {
       return 'btn btn-sm btn-success';
     } else if (winrate < 50) {
