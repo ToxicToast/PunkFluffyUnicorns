@@ -40,7 +40,6 @@ export class VodsEffects {
 
 
   private getVodQuery(payload) {
-    console.error(payload);
     const { vodQuery } = payload.data;
     return vodQuery;
   }
