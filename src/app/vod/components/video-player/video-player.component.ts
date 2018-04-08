@@ -18,7 +18,7 @@ export class VideoPlayerComponent implements OnInit {
   }
 
   getEmbedUrl(videoId) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(`http://www.youtube.com/embed/${videoId}?autoplay=1`);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`//www.youtube.com/embed/${videoId}?autoplay=1`);
   }
 
 }
