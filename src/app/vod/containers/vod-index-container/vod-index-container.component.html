@@ -1,5 +1,3 @@
 <app-layout>
-    <app-warning-bar [message]="'Vod-Page is work in Progress'"></app-warning-bar>
-    <br>
     <app-video-list [state]="vods$ | async" (switchVideo)="switchToVideo($event)"></app-video-list>
 </app-layout>
