@@ -13,6 +13,8 @@ import { VodService } from '@vod/services/vod.service';
 import {
   LoadVideosSuccess,
   LoadVideosFailure,
+  LoadSingleVideoSuccess,
+  LoadSingleVideoFailure,
   VodActionTypes
 } from '@vod/actions/vod.actions';
 
@@ -25,13 +27,20 @@ export class VodsEffects {
   ) { }
 
   @Effect()
-  loadRankings$ = this.actions.ofType(VodActionTypes.LOAD_VOD)
+  loadVideos$ = this.actions.ofType(VodActionTypes.LOAD_VOD)
     .switchMap(() => this.service.getVideos()
       .map(data => new LoadVideosSuccess(this.getVodQuery(data)))
       .catch(err => of(new LoadVideosFailure())));
 
+    @Effect()
+    loadSingle$ = this.actions.ofType(VodActionTypes.LOAD_SINLGEVOD)
+      .switchMap(payload => this.service.getSingle(payload)
+        .map(data => new LoadSingleVideoSuccess(this.getVodQuery(data)))
+        .catch(err => of(new LoadSingleVideoFailure())));
+
 
   private getVodQuery(payload) {
+    console.error(payload);
     const { vodQuery } = payload.data;
     return vodQuery;
   }

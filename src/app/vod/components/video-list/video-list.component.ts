@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class VideoListComponent implements OnInit {
 
   @Input() state: any;
+  @Output() switchVideo = new EventEmitter<number>();
 
   constructor() { }
 

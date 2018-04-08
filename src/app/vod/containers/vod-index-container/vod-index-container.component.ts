@@ -27,4 +27,9 @@ export class VodIndexContainerComponent implements OnInit {
   ngOnInit() {
   }
 
+  switchToVideo(videoId) {
+    const url = `/vod/${videoId}`;
+    this.router.navigate([url]);
+  }
+
 }

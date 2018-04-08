@@ -4,43 +4,42 @@ export interface State {
   loading: boolean;
   loaded: boolean;
   error: boolean;
-  videos: any;
+  video: any;
 }
 
 const initialState: State = {
   loading: false,
   loaded: false,
   error: false,
-  videos: []
+  video: []
 };
 
 export function reducer(state = initialState, action: VodActions): State {
   switch (action.type) {
-    case VodActionTypes.LOAD_VOD: {
+    case VodActionTypes.LOAD_SINLGEVOD: {
       return Object.assign({}, state, {
         loading: true,
         loaded: false,
         error: false,
-        videos: []
+        video: []
       });
     }
-    case VodActionTypes.LOAD_VOD_SUCCESS: {
+    case VodActionTypes.LOAD_SINLGEVOD_SUCCESS: {
       return Object.assign({}, state, {
         loading: false,
         loaded: true,
         error: false,
-        videos: action.payload || []
+        video: action.payload[0] || []
       });
     }
-    case VodActionTypes.LOAD_VOD_FAILURE: {
+    case VodActionTypes.LOAD_SINLGEVOD_FAILURE: {
       return Object.assign({}, state, {
         loading: false,
         loaded: true,
         error: true,
-        videos: []
+        video: []
       });
     }
-
     default:
       return state;
   }

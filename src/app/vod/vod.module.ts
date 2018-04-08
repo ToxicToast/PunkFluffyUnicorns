@@ -13,7 +13,9 @@ import { VodService } from '@vod/services/vod.service';
 
 import { VodRoutingModule } from '@vod/vod-routing.module';
 import { VodIndexContainerComponent } from '@vod/containers/vod-index-container/vod-index-container.component';
-import { VideoListComponent } from './components/video-list/video-list.component';
+import { VideoListComponent } from '@vod/components/video-list/video-list.component';
+import { VideoPlayerComponent } from '@vod/components/video-player/video-player.component';
+import { VodShowContainerComponent } from '@vod/containers/vod-show-container/vod-show-container.component';
 
 @NgModule({
   imports: [
@@ -25,10 +27,13 @@ import { VideoListComponent } from './components/video-list/video-list.component
   ],
   declarations: [
     VodIndexContainerComponent,
-    VideoListComponent
+    VideoListComponent,
+    VideoPlayerComponent,
+    VodShowContainerComponent
   ],
   exports: [
-    VodIndexContainerComponent
+    VodIndexContainerComponent,
+    VodShowContainerComponent
   ],
   providers: [
     VodService
