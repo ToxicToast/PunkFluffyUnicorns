@@ -1,0 +1,30 @@
+<section class="card">
+    <div class="card-header">
+        <span class="cat__core__title">
+          <strong>Punk Fluffy Unicorns - VODs</strong>
+      </span>
+    </div>
+    <div class="card-body">
+        <div class="cat__ecommerce__catalog">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" *ngFor="let videos of state.videos; let i = index; trackBy: trackByName;">
+                    <div class="cat__ecommerce__catalog__item">
+                        <div class="cat__ecommerce__catalog__item__img">
+                            <a href="#">
+                                <img [src]="videos.youtube_thumbnail" alt="Thumbnail">
+                            </a>
+                        </div>
+                        <div class="cat__ecommerce__catalog__item__title">
+                            <a href="#">{{ videos.youtube_title }}</a>
+                        </div>
+                        <div class="cat__ecommerce__catalog__item__descr">
+                            <div class="cat__ecommerce__catalog__item__descr__sizes">
+                                <span><small>{{ videos.youtube_duration }}</small></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
