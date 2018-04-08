@@ -21,7 +21,7 @@ export class Roles {
     if (name === 'DragonMG') {
       return this.setCustomRole(`${OverwatchRoles.ROLE_SUPPORT}`);
     }
-    if (name === 'nerdxchan') {
+    if (name === 'nerdxchan' || name === 'Noobster') {
       return this.setCustomRole(`${OverwatchRoles.ROLE_TANK}`);
     }
     if (name === 'BeLoor' || name === 'Anti' || name === 'HanterGER') {
