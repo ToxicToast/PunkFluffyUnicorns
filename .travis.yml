@@ -16,8 +16,9 @@ script:
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
-  - curl https://gist.githubusercontent.com/lxhunter/9d4310462b6972a3f57b5f914543fd51/raw/semver.sh | bash
-
+  - export GIT_TAG=curl https://gist.githubusercontent.com/lxhunter/9d4310462b6972a3f57b5f914543fd51/raw/semver.sh | bash
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  - git push -q https://$TAGPERM@github.com/ToxicToast/PunkFluffyUnicorns --tags
 cache:
   directories:
     - node_modules
