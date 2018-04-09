@@ -31,6 +31,12 @@ export class OverwatchHeroPipe implements PipeTransform {
     if (name === 'reaper') {
       return 'Reaper';
     }
+    if (name === 'genji') {
+      return 'Genji';
+    }
+    if (name === 'hanzo') {
+      return 'Hanzo';
+    }
     return name;
   }
 
