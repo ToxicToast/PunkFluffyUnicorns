@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'dashboard', loadChildren: '@dashboard/dashboard.module#DashboardModule', pathMatch: 'full' },
   { path: 'ranked', loadChildren: '@ranked/ranked.module#RankedModule', pathMatch: 'full' },
   { path: 'vod', loadChildren: '@vod/vod.module#VodModule', pathMatch: 'full' },
+  { path: 'guides', loadChildren: '@guides/guides.module#GuidesModule', pathMatch: 'full' },
   { path: 'changelog', component: ChangelogComponent, pathMatch: 'full' },
   { path: 'maintenance', component: MaintenanceComponent, pathMatch: 'full' }
 ];

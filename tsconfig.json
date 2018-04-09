@@ -25,6 +25,7 @@
       "@core/*": ["app/core/*"],
       "@ranked/*": ["app/ranked/*"],
       "@vod/*": ["app/vod/*"],
+      "@guides/*": ["app/guides/*"],
     }
   }
 }
