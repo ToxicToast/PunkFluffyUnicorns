@@ -1,5 +1,5 @@
 <app-header></app-header>
-<app-navigation></app-navigation>
-<div class="cat__content">
+<app-navigation *ngIf="navigation === true"></app-navigation>
+<div [ngClass]="{'cat__content': navigation === true}">
     <ng-content></ng-content>
 </div>
