@@ -14,10 +14,11 @@ import { LayoutComponent } from '@core/components/layout/layout.component';
 import { NavigationComponent } from '@core/components/navigation/navigation.component';
 import { ErrorBarComponent } from '@core/components/error-bar/error-bar.component';
 import { WarningBarComponent } from '@core/components/warning-bar/warning-bar.component';
+import { ChangelogComponent } from '@core/components/changelog/changelog.component';
 
 import { OverwatchHeroPipe } from '@core/pipes/overwatch-hero.pipe';
 import { FirstUppercase } from '@core/pipes/FirstUppercase.pipe';
-import { ChangelogComponent } from '@core/components/changelog/changelog.component';
+import { BigNumbers } from '@core/pipes/bigNumbers.pipe';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -39,7 +40,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     WarningBarComponent,
     OverwatchHeroPipe,
     FirstUppercase,
-    ChangelogComponent
+    ChangelogComponent,
+    BigNumbers,
   ],
   exports: [
     LoadingBarComponent,
@@ -51,7 +53,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     WarningBarComponent,
     OverwatchHeroPipe,
     FirstUppercase,
-    ChangelogComponent
+    ChangelogComponent,
+    BigNumbers
   ],
   providers: [
     OverwatchService

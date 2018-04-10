@@ -100,6 +100,36 @@ export class TeamStatsComponent implements OnInit {
     return `${most.player_name} - ${most.value} Deaths`;
   }
 
+  getMostDamage() {
+    const damageArray = [];
+    const { overwatchRanking } = this.state;
+    overwatchRanking.forEach(ranking => {
+      damageArray.push({
+        player_id: ranking.player_id,
+        player_name: ranking.player.name,
+        value: ranking.player_damage_done
+      });
+    });
+    const sorted = damageArray.sort(this.sortByValue);
+    const most = sorted[0];
+    return `${most.player_name} - ${this.formatBigNumbers(most.value)} Damage`;
+  }
+
+  getMostHealing() {
+    const healingArray = [];
+    const { overwatchRanking } = this.state;
+    overwatchRanking.forEach(ranking => {
+      healingArray.push({
+        player_id: ranking.player_id,
+        player_name: ranking.player.name,
+        value: ranking.player_healing_done
+      });
+    });
+    const sorted = healingArray.sort(this.sortByValue);
+    const most = sorted[0];
+    return `${most.player_name} - ${this.formatBigNumbers(most.value)} Healing`;
+  }
+
   private sortByValue(a, b) {
     if (a.value < b.value) {
       return 1;
@@ -108,6 +138,11 @@ export class TeamStatsComponent implements OnInit {
       return -1;
     }
     return 0;
+  }
+
+  private formatBigNumbers(value: number) {
+    const newNumber = value / 1000;
+    return Number(newNumber).toFixed(0) + 'k';
   }
 
 }

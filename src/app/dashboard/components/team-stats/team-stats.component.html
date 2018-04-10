@@ -45,7 +45,7 @@
             </div>
 
             <div class="col-xl-3 ">
-                <div class="cat__core__step cat__core__step--default mb-4 ">
+                <div class="cat__core__step cat__core__step--primary mb-4 ">
                     <span class="cat__core__step__digit ">
                       <i class="icmn-database "></i>
                    </span>
@@ -85,7 +85,7 @@
          </span>
                   <div class="cat__core__step__desc ">
                       <span class="cat__core__step__title ">Most Damage Done</span>
-                      <p>0</p>
+                      <p [innerHTML]="getMostDamage()"></p>
                   </div>
               </div>
           </div>
@@ -96,7 +96,7 @@
        </span>
                 <div class="cat__core__step__desc ">
                     <span class="cat__core__step__title ">Most Healing Done</span>
-                    <p>0</p>
+                    <p [innerHTML]="getMostHealing()"></p>
                 </div>
             </div>
         </div>
