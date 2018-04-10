@@ -55,30 +55,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-xl-3 ">
-                <div class="cat__core__step cat__core__step--default mb-4 ">
-                    <span class="cat__core__step__digit ">
-                    <i class="icmn-database "></i>
-                 </span>
-                    <div class="cat__core__step__desc ">
-                        <span class="cat__core__step__title ">Average Ranking</span>
-                        <p [innerHTML]="getAverageRanking()"></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 ">
-                <div class="cat__core__step cat__core__step--default mb-4 ">
-                    <span class="cat__core__step__digit ">
-                      <img [src]="getAverageTierImage()" style="max-height: 50px; padding-bottom: 10px;" alt="Player Tier">
-               </span>
-                    <div class="cat__core__step__desc">
-                        <span class="cat__core__step__title ">Average Tier</span>
-                        <p [innerHTML]="getAverageTier()"></p>
-                    </div>
-                </div>
-            </div>
+            <!-- -->
             <div class="col-xl-3 ">
                 <div class="cat__core__step cat__core__step--success mb-4">
                     <span class="cat__core__step__digit ">
@@ -101,6 +78,52 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xl-3 ">
+              <div class="cat__core__step cat__core__step--danger mb-4">
+                  <span class="cat__core__step__digit ">
+                    <i class="ra ra-monster-skull"></i>
+         </span>
+                  <div class="cat__core__step__desc ">
+                      <span class="cat__core__step__title ">Most Damage Done</span>
+                      <p>0</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 ">
+            <div class="cat__core__step cat__core__step--danger mb-4">
+                <span class="cat__core__step__digit ">
+                  <i class="ra ra-round-bottom-flask"></i>
+       </span>
+                <div class="cat__core__step__desc ">
+                    <span class="cat__core__step__title ">Most Healing Done</span>
+                    <p>0</p>
+                </div>
+            </div>
+        </div>
+            <!-- -->
+            <div class="col-xl-6">
+              <div class="cat__core__step cat__core__step--default mb-4 ">
+                  <span class="cat__core__step__digit ">
+                  <i class="icmn-database "></i>
+               </span>
+                  <div class="cat__core__step__desc ">
+                      <span class="cat__core__step__title ">Average Ranking</span>
+                      <p [innerHTML]="getAverageRanking()"></p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-xl-6">
+              <div class="cat__core__step cat__core__step--default mb-4 ">
+                  <span class="cat__core__step__digit ">
+                    <img [src]="getAverageTierImage()" style="max-height: 50px; padding-bottom: 10px;" alt="Player Tier">
+             </span>
+                  <div class="cat__core__step__desc">
+                      <span class="cat__core__step__title ">Average Tier</span>
+                      <p [innerHTML]="getAverageTier()"></p>
+                  </div>
+              </div>
+          </div>
         </div>
     </div>
 </section>
