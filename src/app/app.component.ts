@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Route, ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { environment } from '@env/environment'
+import { environment } from '@env/environment';
 
 import { Store } from '@ngrx/store';
 
