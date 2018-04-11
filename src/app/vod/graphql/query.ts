@@ -16,3 +16,9 @@ export const fetchSingle = `query fetchVods {
     youtube_duration
   }
 }`;
+
+export const createVod = `mutation createVod($youtube_id: string) {
+  vodMutation(youtube_id: $youtube_id) {
+    youtube_id
+  }
+}`;

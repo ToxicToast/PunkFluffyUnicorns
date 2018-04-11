@@ -16,6 +16,7 @@ import * as vods from '@vod/actions/vod.actions';
 export class VodIndexContainerComponent implements OnInit {
 
   vods$: Observable<any>;
+  showAddModal: boolean = false;
 
   constructor(
     private store: Store<fromVods.State>,
@@ -29,6 +30,11 @@ export class VodIndexContainerComponent implements OnInit {
 
   switchToVideo(videoId) {
     const url = `/vod/${videoId}`;
+    this.router.navigate([url]);
+  }
+
+  switchToAdd() {
+    const url = `/vod/add`;
     this.router.navigate([url]);
   }
 

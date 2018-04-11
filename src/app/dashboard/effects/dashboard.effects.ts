@@ -9,6 +9,7 @@ import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 
 import { DashboardService } from '@dashboard/services/dashboard.service';
+import { ToastService } from '@core/services/toast.service';
 
 import {
   LoadDashboardSuccess,
@@ -23,13 +24,20 @@ export class DashboardEffects {
 
   constructor(
     private actions: Actions,
-    private service: DashboardService
+    private service: DashboardService,
+    private toastr: ToastService
   ) { }
 
   @Effect()
   loadDashboard$ = this.actions.ofType(DashboardActionTypes.LOAD_DASHBOARD)
     .switchMap(() => this.service.getDashboard()
       .map((data: any) => new LoadDashboardSuccess(data.data))
-      .catch(err => of(new LoadDashboardFailure(err))));
+      .catch(err => {
+        this.toastr.showError('Failed loading Stats');
+        this.toastr.showError('Failed loading Medals');
+        this.toastr.showError('Failed loading KPD');
+        this.toastr.showError('Failed loading Most Played Heroes');
+        return of(new LoadDashboardFailure(err));
+      }));
 
 }

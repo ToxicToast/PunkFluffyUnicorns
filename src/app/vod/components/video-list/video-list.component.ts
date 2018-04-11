@@ -9,6 +9,7 @@ export class VideoListComponent implements OnInit {
 
   @Input() state: any;
   @Output() switchVideo = new EventEmitter<number>();
+  @Output() switchAdd = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -17,6 +18,10 @@ export class VideoListComponent implements OnInit {
 
   trackByName(index, video) {
     return video.youtube_title;
+  }
+
+  showModal() {
+    this.switchAdd.emit();
   }
 
 }

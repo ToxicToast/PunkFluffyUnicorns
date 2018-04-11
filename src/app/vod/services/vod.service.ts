@@ -4,7 +4,7 @@ import { environment } from '@env/environment';
 
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
-import { fetchVods, fetchSingle } from '@vod/graphql/query';
+import { fetchVods, fetchSingle, createVod } from '@vod/graphql/query';
 
 
 @Injectable()
@@ -28,6 +28,14 @@ export class VodService {
     const query = fetchSingle;
     const replaced = query.replace('%ID%', payload);
     return this.apollo.query({ query: gql`${replaced}` });
+  }
+
+  addVideo(data) {
+    const { payload } = data;
+    return this.apollo.mutate({
+      mutation: gql`${createVod}`,
+      variables: {}
+    });
   }
 
 }

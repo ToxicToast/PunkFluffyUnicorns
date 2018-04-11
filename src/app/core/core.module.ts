@@ -6,6 +6,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { OverwatchService } from '@core/services/overwatch.service';
+import { ToastService } from '@core/services/toast.service';
 
 import { LoadingBarComponent } from '@core/components/loading-bar/loading-bar.component';
 import { MaintenanceComponent } from '@core/components/maintenance/maintenance.component';
@@ -20,6 +21,8 @@ import { OverwatchHeroPipe } from '@core/pipes/overwatch-hero.pipe';
 import { FirstUppercase } from '@core/pipes/FirstUppercase.pipe';
 import { BigNumbers } from '@core/pipes/bigNumbers.pipe';
 
+import { validateYoutubelink } from '@core/validators/youtubeLink.validator';
+
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -28,7 +31,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   imports: [
     CommonModule,
     RouterModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
   ],
   declarations: [
     LoadingBarComponent,
@@ -54,10 +57,11 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     OverwatchHeroPipe,
     FirstUppercase,
     ChangelogComponent,
-    BigNumbers
+    BigNumbers,
   ],
   providers: [
-    OverwatchService
+    OverwatchService,
+    ToastService,
   ]
 })
 export class CoreModule { }

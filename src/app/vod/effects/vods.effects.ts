@@ -15,6 +15,8 @@ import {
   LoadVideosFailure,
   LoadSingleVideoSuccess,
   LoadSingleVideoFailure,
+  AddVideoSuccess,
+  AddVideoFailure,
   VodActionTypes
 } from '@vod/actions/vod.actions';
 
@@ -36,7 +38,13 @@ export class VodsEffects {
     loadSingle$ = this.actions.ofType(VodActionTypes.LOAD_SINLGEVOD)
       .switchMap(payload => this.service.getSingle(payload)
         .map(data => new LoadSingleVideoSuccess(this.getVodQuery(data)))
-        .catch(err => of(new LoadSingleVideoFailure())));
+      .catch(err => of(new LoadSingleVideoFailure())));
+
+      @Effect()
+      addVideo$ = this.actions.ofType(VodActionTypes.ADD_VOD)
+        .switchMap(payload => this.service.addVideo(payload)
+          .map(data => new AddVideoSuccess())
+          .catch(err => of(new AddVideoFailure(err))));
 
 
   private getVodQuery(payload) {

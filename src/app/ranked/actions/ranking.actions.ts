@@ -27,6 +27,7 @@ export class LoadTeamRankingSuccess implements Action {
 
 export class LoadTeamRankingFailure implements Action {
   readonly type = RankingActionTypes.LOAD_TEAM_RANKING_FAILURE;
+  constructor(public payload: string) { }
 }
 
 export class LoadPlayerRanking implements Action {
@@ -41,6 +42,7 @@ export class LoadPlayerRankingSuccess implements Action {
 
 export class LoadPlayerRankingFailure implements Action {
   readonly type = RankingActionTypes.LOAD_PLAYER_RANKING_FAILURE;
+  constructor(public payload: string) { }
 }
 
 export class UpdatePlayerRanking implements Action {
@@ -54,6 +56,7 @@ export class UpdatePlayerRankingSuccess implements Action {
 
 export class UpdatePlayerRankingFailure implements Action {
   readonly type = RankingActionTypes.UPDATE_PLAYER_RANKING_FAILURE;
+  constructor(public payload: string) { }
 }
 
 export type RankingActions = LoadTeamRanking | LoadTeamRankingSuccess | LoadTeamRankingFailure |

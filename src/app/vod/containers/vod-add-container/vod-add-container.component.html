@@ -1,0 +1,38 @@
+<app-layout>
+    <section class="card">
+        <div class="card-header">
+            <span class="cat__core__title">
+                <strong>Punk Fluffy Unicorns - Add VOD</strong>
+            </span>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="mb-5">
+                        <form [formGroup]="vodForm">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="l31">Youtube Link</label>
+                                        <div class="input-group">
+                                            <input class="form-control" placeholder="Youtube Link" type="text" formControlName="link">
+                                            <span class="input-group-addon">
+                                            <i class="icmn-youtube"></i>
+                                        </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-primary" type="button" (click)="saveDialog()" [disabled]="!vodForm.valid">Submit</button>
+                                <button class="btn btn-default" type="button" (click)="cancelDialog()">Cancel</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</app-layout>

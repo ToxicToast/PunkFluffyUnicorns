@@ -9,6 +9,8 @@ import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 
 import { RankingService } from '@ranked/services/ranking.service';
+import { ToastService } from '@core/services/toast.service';
+
 import { Ranking } from '@core/dataContracts/Ranking.contract';
 
 import {
@@ -26,20 +28,27 @@ export class RankingEffects {
 
   constructor(
     private actions: Actions,
-    private service: RankingService
+    private service: RankingService,
+    private toastr: ToastService
   ) { }
 
   @Effect()
   loadRankings$ = this.actions.ofType(RankingActionTypes.LOAD_TEAM_RANKING)
     .switchMap(() => this.service.getRanked()
       .map(data => new LoadTeamRankingSuccess(this.getRankingQuery(data)))
-      .catch(err => of(new LoadTeamRankingFailure())));
+      .catch(err => {
+        this.toastr.showError('Failed loading Ranked List');
+        return of(new LoadTeamRankingFailure(err));
+      }));
 
   @Effect()
   loadProfile$ = this.actions.ofType(RankingActionTypes.LOAD_PLAYER_RANKING)
     .switchMap((payload) => this.service.getProfile(payload)
-      .map(data => new LoadPlayerRankingSuccess(this.getData(data)))
-      .catch(err => of(new LoadPlayerRankingFailure())));
+        .map(data => new LoadPlayerRankingSuccess(this.getData(data)))
+        .catch(err => {
+          this.toastr.showError('Failed loading Player Profile');
+          return of(new LoadPlayerRankingFailure(err));
+        }));
 /*
   @Effect()
   updateProfile$ = this.actions.ofType(RankingActionTypes.UPDATE_PLAYER_RANKING)
