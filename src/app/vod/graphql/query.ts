@@ -17,8 +17,8 @@ export const fetchSingle = `query fetchVods {
   }
 }`;
 
-export const createVod = `mutation createVod($youtube_id: string) {
-  vodMutation(youtube_id: $youtube_id) {
+export const createVod = `mutation {
+  vodMutation(youtube_id: "%YOUTUBEID%") {
     youtube_id
   }
 }`;

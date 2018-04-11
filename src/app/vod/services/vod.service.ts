@@ -32,9 +32,10 @@ export class VodService {
 
   addVideo(data) {
     const { payload } = data;
+    const query = createVod;
+    const replaced = query.replace('%YOUTUBEID%', payload.link);
     return this.apollo.mutate({
-      mutation: gql`${createVod}`,
-      variables: {}
+      mutation: gql`${replaced}`,
     });
   }
 
