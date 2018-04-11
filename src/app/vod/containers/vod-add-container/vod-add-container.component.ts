@@ -28,6 +28,7 @@ export class VodAddContainerComponent implements OnInit {
   saveDialog() {
     this.store.dispatch(new vods.AddVideo(this.vodForm.value));
     this.cancelDialog();
+    this.store.dispatch(new vods.LoadVideos());
   }
 
   cancelDialog() {
