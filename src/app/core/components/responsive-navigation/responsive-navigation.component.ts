@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ResponsiveNavigationComponent implements OnInit {
 
   @Input() sidebarVisible: boolean = false;
-  @Output() openSidebarEvent = new EventEmitter<boolean>();
+  @Output() openSidebarEvent = new EventEmitter<boolean|string>();
 
   constructor() { }
 
@@ -16,11 +16,10 @@ export class ResponsiveNavigationComponent implements OnInit {
 
   openSidebar() {
     if (this.sidebarVisible) {
-      const status = false;
+      this.openSidebarEvent.emit(false);
     } else {
-      const status = true;
+      this.openSidebarEvent.emit(true);
     }
-    this.openSidebarEvent.emit(status);
   }
 
 }

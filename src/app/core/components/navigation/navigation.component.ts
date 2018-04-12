@@ -8,7 +8,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
 
-  sidebarVisible: boolean;
+  sidebarVisible: boolean = false;
 
   constructor(
     private router: Router
