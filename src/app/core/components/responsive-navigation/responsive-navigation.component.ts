@@ -16,11 +16,11 @@ export class ResponsiveNavigationComponent implements OnInit {
 
   openSidebar() {
     if (this.sidebarVisible) {
-      const sidebarVisible = false;
+      const status = false;
     } else {
-      const sidebarVisible = true;
+      const status = true;
     }
-    this.openSidebarEvent.emit(sidebarVisible);
+    this.openSidebarEvent.emit(status);
   }
 
 }
