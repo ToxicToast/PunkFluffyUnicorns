@@ -22,6 +22,7 @@ import { FirstUppercase } from '@core/pipes/FirstUppercase.pipe';
 import { BigNumbers } from '@core/pipes/bigNumbers.pipe';
 
 import { validateYoutubelink } from '@core/validators/youtubeLink.validator';
+import { ResponsiveNavigationComponent } from '@core/components/responsive-navigation/responsive-navigation.component';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -45,6 +46,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FirstUppercase,
     ChangelogComponent,
     BigNumbers,
+    ResponsiveNavigationComponent,
   ],
   exports: [
     LoadingBarComponent,
@@ -58,6 +60,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FirstUppercase,
     ChangelogComponent,
     BigNumbers,
+    ResponsiveNavigationComponent
   ],
   providers: [
     OverwatchService,

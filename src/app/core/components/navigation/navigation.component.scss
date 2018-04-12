@@ -1,3 +1,11 @@
 .active--link {
-	color: #00FFFF;
+    color: #00FFFF;
+}
+
+.showSidebar {
+    transform: translate3d(0rem, 0, 0)
+}
+
+.hideSidebar {
+    transform: translate3d(-17.86rem, 0, 0)
 }

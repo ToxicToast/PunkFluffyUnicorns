@@ -1,4 +1,5 @@
-<div class="cat__menu-left">
+<div class="cat__menu-left" [ngClass]="getSidebarVisibility()">
+    <app-responsive-navigation [sidebarVisible]="sidebarVisible" (openSidebarEvent)="changeSidebarStatus($event)"></app-responsive-navigation>
     <div class="cat__menu-left__logo">
         <img src="/assets/newlogo.png" alt="LOGO" class="center-block">
     </div>

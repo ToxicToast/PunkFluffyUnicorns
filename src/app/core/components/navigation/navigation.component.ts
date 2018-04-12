@@ -12,14 +12,24 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     private router: Router
-  ) {
-    this.sidebarVisible = false;
-  }
+  ) { }
 
   ngOnInit() { }
 
   routeToLink(route: string): void {
     this.router.navigate([route]);
+  }
+
+  changeSidebarStatus(status: boolean) {
+    this.sidebarVisible = status;
+  }
+
+  getSidebarVisibility(): string {
+    if (this.sidebarVisible) {
+      return 'showSidebar';
+    } else {
+      return 'hideSidebar';
+    }
   }
 
 }
