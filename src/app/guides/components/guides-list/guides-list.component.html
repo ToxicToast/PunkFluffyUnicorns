@@ -1,1 +1,27 @@
-{{ state | json }}
+<section class="card">
+    <div class="card-header">
+        <span class="cat__core__title">
+				<strong>Punk Fluffy Unicorns - Guides</strong>
+		</span>
+    </div>
+    <div class="card-body">
+        <div class="cat__ecommerce__catalog">
+            <app-loading-bar *ngIf="state.loading"></app-loading-bar>
+            <app-error-bar *ngIf="state.loaded && state.error"></app-error-bar>
+            <div class="row" *ngIf="state.loaded && !state.error">
+                <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12" *ngFor="let guide of state.guides; let i = index; trackBy: trackByTitle;">
+                    <div class="cat__ecommerce__catalog__item">
+                        <div class="cat__ecommerce__catalog__item__img">
+                            <a (click)="switchGuide.emit(guide.id)">
+                                <img [src]="guide.thumbnail" alt="Thumbnail">
+                            </a>
+                        </div>
+                        <div class="cat__ecommerce__catalog__item__title">
+                            <a (click)="switchVideo.emit(guide.id)">{{ guide.title }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
