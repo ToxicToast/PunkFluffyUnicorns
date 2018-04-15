@@ -3,6 +3,5 @@ export const fetchGuides = `query fetchGuides {
     id
     title
     thumbnail
-    created_at
   }
 }`;
