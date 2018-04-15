@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { Store } from '@ngrx/store';
+
+import * as fromGuides from '@guides/reducers/guides.reducer';
+
 
 @Component({
   selector: 'app-guides-index-container',
@@ -7,9 +13,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuidesIndexContainerComponent implements OnInit {
 
-  constructor() { }
+  guides$: Observable<any>;
+
+  constructor(
+    private store: Store<fromGuides.State>
+  ) { }
 
   ngOnInit() {
+    this.guides$ = this.store.select(fromGuides.getGuidesState);
   }
 
 }

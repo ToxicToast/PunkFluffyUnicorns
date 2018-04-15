@@ -1,3 +1,6 @@
 <app-layout>
     <app-warning-bar message="Guides Page still in Progress"></app-warning-bar>
+    <br>
+    <app-guides-list></app-guides-list>
+    <br> {{guides$ | async | json}}
 </app-layout>

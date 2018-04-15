@@ -12,6 +12,9 @@ import * as ranking from '@ranked/actions/ranking.actions';
 //
 import * as fromVods from '@vod/reducers/vod.reducer';
 import * as videos from '@vod/actions/vod.actions';
+//
+import * as fromGuides from '@guides/reducers/guides.reducer';
+import * as guides from '@guides/actions/guides.actions';
 
 
 @Component({
@@ -27,6 +30,7 @@ export class AppComponent {
     private dashboardStore: Store<fromDashboard.State>,
     private rankedStore: Store<fromRanked.State>,
     private vodStore: Store<fromVods.State>,
+    private guidesStore: Store<fromGuides.State>,
     private router: Router
   ) {
     // console.log('configured routes: ', this.router.config);
@@ -35,6 +39,7 @@ export class AppComponent {
     this.dispatchDashboard();
     this.dispatchRanked();
     this.dispatchVod();
+    this.dispatchGuides();
   }
 
   private dispatchDashboard() {
@@ -47,6 +52,10 @@ export class AppComponent {
 
   private dispatchVod() {
     this.vodStore.dispatch(new videos.LoadVideos());
+  }
+
+  private dispatchGuides() {
+    this.vodStore.dispatch(new guides.LoadGuides());
   }
 
   private maintenanceRedirect() {
