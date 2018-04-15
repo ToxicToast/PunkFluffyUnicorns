@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-guides-list',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuidesListComponent implements OnInit {
 
+  @Input() state: any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  trackByTitle(index: number, guide: any) {
+    return guide.title;
   }
 
 }
