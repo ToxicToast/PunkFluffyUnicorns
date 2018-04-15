@@ -19,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { AdminModule } from '@admin/admin.module';
+import { NewsModule } from '@news/news.module';
 import { DashboardModule } from '@dashboard/dashboard.module';
 import { CoreModule } from '@core/core.module';
 import { RankedModule } from '@ranked/ranked.module';
@@ -65,7 +65,7 @@ const graphqlEndpoint = 'https://backend.toxictoast.de/graphql';
     HttpLinkModule,
     AppRoutingModule,
     CoreModule,
-    AdminModule,
+    NewsModule,
     DashboardModule,
     RankedModule,
     VodModule,

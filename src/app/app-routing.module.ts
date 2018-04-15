@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'ranked', loadChildren: '@ranked/ranked.module#RankedModule', pathMatch: 'full' },
   { path: 'vod', loadChildren: '@vod/vod.module#VodModule', pathMatch: 'full' },
   { path: 'guides', loadChildren: '@guides/guides.module#GuidesModule', pathMatch: 'full' },
+  { path: 'news', loadChildren: '@news/news.module#NewsModule', pathMatch: 'full' },
   { path: 'changelog', component: ChangelogComponent, pathMatch: 'full' },
   { path: 'maintenance', component: MaintenanceComponent, pathMatch: 'full' }
 ];

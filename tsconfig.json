@@ -21,7 +21,7 @@
       "@env/*": ["environments/*"],
       "@assets/*": ["assets/*"],
       "@dashboard/*": ["app/dashboard/*"],
-      "@admin/*": ["app/admin/*"],
+      "@news/*": ["app/news/*"],
       "@core/*": ["app/core/*"],
       "@ranked/*": ["app/ranked/*"],
       "@vod/*": ["app/vod/*"],
