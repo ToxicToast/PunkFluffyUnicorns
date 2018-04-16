@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-guides-list',
@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class GuidesListComponent implements OnInit {
 
   @Input() state: any;
+  @Output() switchGuide = new EventEmitter<number>();
 
   constructor() { }
 

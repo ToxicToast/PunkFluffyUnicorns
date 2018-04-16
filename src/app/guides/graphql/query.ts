@@ -5,3 +5,11 @@ export const fetchGuides = `query fetchGuides {
     thumbnail
   }
 }`;
+
+export const fetchSingle = `query fetchGuide {
+  guidesQuery(id:%ID%) {
+    id
+    title
+    text
+  }
+}`;

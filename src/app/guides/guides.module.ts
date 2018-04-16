@@ -9,9 +9,13 @@ import { CoreModule } from '@core/core.module';
 
 import { GuidesService } from '@guides/services/guides.service';
 
-import { GuidesRoutingModule } from './guides-routing.module';
-import { GuidesIndexContainerComponent } from './containers/guides-index-container/guides-index-container.component';
-import { GuidesListComponent } from './components/guides-list/guides-list.component';
+import { GuidesRoutingModule } from '@guides/guides-routing.module';
+import { GuidesIndexContainerComponent } from '@guides/containers/guides-index-container/guides-index-container.component';
+import { GuidesListComponent } from '@guides/components/guides-list/guides-list.component';
+import { GuidesShowContainerComponent } from '@guides/containers/guides-show-container/guides-show-container.component';
+import { GuideReadComponent } from './Components/guide-read/guide-read.component';
+
+import { MarkdownModule } from 'ngx-md';
 
 @NgModule({
   imports: [
@@ -19,11 +23,14 @@ import { GuidesListComponent } from './components/guides-list/guides-list.compon
     GuidesRoutingModule,
     StoreModule.forFeature('guides', reducers),
     EffectsModule.forFeature([]),
-    CoreModule
+    CoreModule,
+    MarkdownModule.forRoot(),
   ],
   declarations: [
     GuidesIndexContainerComponent,
-    GuidesListComponent
+    GuidesListComponent,
+    GuidesShowContainerComponent,
+    GuideReadComponent
   ],
   providers: [
     GuidesService

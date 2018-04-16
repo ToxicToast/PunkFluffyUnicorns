@@ -14,7 +14,9 @@ import { ToastService } from '@core/services/toast.service';
 import {
   GuidesActionTypes,
   LoadGuidesSuccess,
-  LoadGuidesFailure
+  LoadGuidesFailure,
+  LoadSingleGuidesSuccess,
+  LoadSingleGuidesFailure
 } from '@guides/actions/guides.actions';
 
 @Injectable()
@@ -27,12 +29,27 @@ export class GuidesEffects {
   ) { }
 
   @Effect()
-  loadDashboard$ = this.actions.ofType(GuidesActionTypes.LOAD_GUIDES)
+  loadGuides$ = this.actions.ofType(GuidesActionTypes.LOAD_GUIDES)
     .switchMap(() => this.service.getGuides()
       .map((data: any) => new LoadGuidesSuccess(data.data))
       .catch(err => {
         this.toastr.showError('Failed loading Guides');
         return of(new LoadGuidesFailure(err));
       }));
+
+      @Effect()
+      loadSingle$ = this.actions.ofType(GuidesActionTypes.LOAD_SINGLE_GUIDE)
+        .switchMap(payload => this.service.getSingle(payload)
+        .map(data => new LoadSingleGuidesSuccess(this.getGuideQuery(data)))
+        .catch(err => {
+          this.toastr.showError('Failed loading Guide');
+          return of(new LoadSingleGuidesFailure(err));
+      }));
+
+
+      private getGuideQuery(payload) {
+        const { guidesQuery } = payload.data;
+        return guidesQuery;
+      }
 
 }
