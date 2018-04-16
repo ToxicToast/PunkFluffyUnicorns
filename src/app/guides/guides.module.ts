@@ -13,7 +13,7 @@ import { GuidesRoutingModule } from '@guides/guides-routing.module';
 import { GuidesIndexContainerComponent } from '@guides/containers/guides-index-container/guides-index-container.component';
 import { GuidesListComponent } from '@guides/components/guides-list/guides-list.component';
 import { GuidesShowContainerComponent } from '@guides/containers/guides-show-container/guides-show-container.component';
-import { GuideReadComponent } from './Components/guide-read/guide-read.component';
+import { GuideReadComponent } from '@guides/components/guide-read/guide-read.component';
 
 import { MarkdownModule } from 'ngx-md';
 
@@ -37,7 +37,9 @@ import { MarkdownModule } from 'ngx-md';
   ],
   exports: [
     GuidesIndexContainerComponent,
-    GuidesListComponent
+    GuidesListComponent,
+    GuidesShowContainerComponent,
+    GuideReadComponent
   ]
 })
 export class GuidesModule { }
