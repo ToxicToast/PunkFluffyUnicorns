@@ -27,6 +27,11 @@ export class AuthContainerComponent implements OnInit {
     this.router.navigate([url]);
   }
 
+  goToLogin() {
+    const url = '/auth';
+    this.router.navigate([url]);
+  }
+
   private getRouteData() {
     this.route.params.subscribe(data => {
       this.isRegister = this.route.snapshot.data['isRegister'] ? true : false;
