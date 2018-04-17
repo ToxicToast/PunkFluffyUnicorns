@@ -11,6 +11,8 @@ import { Actions, Effect } from '@ngrx/effects';
 import { GuidesService } from '@guides/services/guides.service';
 import { ToastService } from '@core/services/toast.service';
 
+import { Guides } from '@guides/models/guides.model';
+
 import {
   GuidesActionTypes,
   LoadGuidesSuccess,
@@ -47,7 +49,7 @@ export class GuidesEffects {
       }));
 
 
-      private getGuideQuery(payload) {
+      private getGuideQuery(payload): Guides[] {
         const { guidesQuery } = payload.data;
         return guidesQuery;
       }
