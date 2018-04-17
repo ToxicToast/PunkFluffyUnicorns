@@ -10,33 +10,37 @@ export class OverwatchHeroPipe implements PipeTransform {
   }
 
   private transformName(name: string): string {
+    let newName = '';
     if (name === 'soldier76') {
-      return 'Soldier:76';
+      newName = 'Soldier:76';
     } else if (name === 'junkrat') {
-      return 'Junkrat';
+      newName = 'Junkrat';
     } else if (name === 'mercy') {
-      return 'Mercy';
+      newName = 'Mercy';
     } else if (name === 'pharah') {
-      return 'Pharah';
+      newName = 'Pharah';
     } else if (name === 'reaper') {
-      return 'Reaper';
+      newName = 'Reaper';
     } else if (name === 'genji') {
-      return 'Genji';
+      newName = 'Genji';
     } else if (name === 'hanzo') {
-      return 'Hanzo';
+      newName = 'Hanzo';
     } else {
-      return this.rewriteTanks(name);
+      newName = this.rewriteTanks(name);
     }
+    return newName;
   }
 
   private rewriteTanks(name: string): string {
+    let newName = '';
     if (name === 'reinhardt') {
-      return 'Reinhardt';
+      newName = 'Reinhardt';
     } else if (name === 'dva') {
-      return 'D.Va';
+      newName = 'D.Va';
     } else {
-      return name;
+      newName = name;
     }
+    return newName;
   }
 
 }
