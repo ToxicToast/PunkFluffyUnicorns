@@ -18,40 +18,39 @@ export class TeamStatsComponent implements OnInit {
   }
 
   getWins(value: string): number {
-    let total = 0;
-    let won = 0;
-    let lost = 0;
-    let draw = 0;
+    let returnValue = null;
+    const payload = { total: 0, won: 0, lost: 0, draw: 0 };
     this.state.overwatchRanking.forEach(data => {
-      total += data.player_games_total;
-      won += data.player_games_won;
-      lost += data.player_games_lose;
-      draw += data.player_games_draw;
+      payload.total += data.player_games_total;
+      payload.won += data.player_games_won;
+      payload.lost += data.player_games_lose;
+      payload.draw += data.player_games_draw;
     });
     if (value === 'total') {
-      return total;
+      returnValue = payload.total;
     } else if (value === 'won') {
-      return won;
+      returnValue = payload.won;
     } else if (value === 'lost') {
-      return lost;
+      returnValue = payload.lost;
     } else if (value === 'draw') {
-      return draw;
+      returnValue = payload.draw;
     } else {
-      return 0;
+      returnValue = 0;
     }
+    return returnValue;
   }
 
   getAverageRanking(): string {
     const { overwatchRanking } = this.state;
-    let players = 0;
-    let total = 0;
-    //
+    const payload = {
+      players: 0,
+      total: 0,
+    };
     overwatchRanking.forEach(ranking => {
-      players++;
-      total += ranking.player_ranking;
+      payload.players++;
+      payload.total += ranking.player_ranking;
     });
-    const average = Number(total / players).toFixed(0);
-    return average;
+    return Number(payload.total / payload.players).toFixed(0);
   }
 
   getAverageTier() {
