@@ -43,4 +43,4 @@ jobs:
       - run:
           name: Deploy app to firebase
           command: |
-            firebase deploy --token=$FIREBASE_TOKEN
+           ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
