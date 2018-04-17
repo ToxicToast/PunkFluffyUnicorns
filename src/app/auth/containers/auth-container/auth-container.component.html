@@ -1,5 +1,5 @@
 isRegister: {{isRegister}}<br> isLogin: {{isLogin}}<br> isLostPassword: {{isLostPassword}}<br>
 
-<app-register *ngIf="isRegister"></app-register>
+<app-register *ngIf="isRegister" (goToLogin)="goToLogin()"></app-register>
 <app-login *ngIf="isLogin" (goToRegister)="goToRegister()"></app-login>
 <app-login *ngIf="isLostPassword"></app-login>
