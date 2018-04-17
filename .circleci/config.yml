@@ -28,18 +28,18 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: yarn install
+      - run: npm run install
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: yarn lint
+      - run: npm run lint
       - run:
           name: Build app in production mode
           command: |
-            yarn build
+            npm run build
       - run:
           name: Deploy app to firebase
           command: |
