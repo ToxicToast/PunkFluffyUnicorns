@@ -12,32 +12,31 @@ export class OverwatchHeroPipe implements PipeTransform {
   private transformName(name: string): string {
     if (name === 'soldier76') {
       return 'Soldier:76';
-    }
-    if (name === 'junkrat') {
+    } else if (name === 'junkrat') {
       return 'Junkrat';
-    }
-    if (name === 'mercy') {
+    } else if (name === 'mercy') {
       return 'Mercy';
-    }
-    if (name === 'dva') {
-      return 'D.Va';
-    }
-    if (name === 'pharah') {
+    } else if (name === 'pharah') {
       return 'Pharah';
+    } else if (name === 'reaper') {
+      return 'Reaper';
+    } else if (name === 'genji') {
+      return 'Genji';
+    } else if (name === 'hanzo') {
+      return 'Hanzo';
+    } else {
+      return this.rewriteTanks(name);
     }
+  }
+
+  private rewriteTanks(name: string): string {
     if (name === 'reinhardt') {
       return 'Reinhardt';
+    } else if (name === 'dva') {
+      return 'D.Va';
+    } else {
+      return name;
     }
-    if (name === 'reaper') {
-      return 'Reaper';
-    }
-    if (name === 'genji') {
-      return 'Genji';
-    }
-    if (name === 'hanzo') {
-      return 'Hanzo';
-    }
-    return name;
   }
 
 }

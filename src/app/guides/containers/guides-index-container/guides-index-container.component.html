@@ -1,5 +1,3 @@
 <app-layout>
-    <app-warning-bar message="Guides Page still in Progress"></app-warning-bar>
-    <br>
     <app-guides-list [state]="guides$ | async" (switchGuide)="switchToGuide($event)"></app-guides-list>
 </app-layout>
