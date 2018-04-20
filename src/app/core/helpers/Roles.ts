@@ -18,13 +18,13 @@ export class Roles {
     if (name === 'ToxicToast') {
       return this.setCustomRole(`${OverwatchRoles.ROLE_DPS}`);
     }
-    if (name === 'DragonMG') {
+    if (name === 'DragonMG' || name === 'HanterGER') {
       return this.setCustomRole(`${OverwatchRoles.ROLE_SUPPORT}`);
     }
     if (name === 'nerdxchan' || name === 'Noobster') {
       return this.setCustomRole(`${OverwatchRoles.ROLE_TANK}`);
     }
-    if (name === 'BeLoor' || name === 'Anti' || name === 'HanterGER') {
+    if (name === 'BeLoor' || name === 'Anti') {
       return this.setCustomRole(`${OverwatchRoles.ROLE_FLEX}`);
     }
     const roles = [];
