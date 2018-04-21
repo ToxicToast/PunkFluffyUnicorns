@@ -10,6 +10,13 @@
                         <br>
                         <form>
                             <div class="form-group">
+                                <label class="form-label">Role</label>
+                                <!--<input class="form-control" placeholder="Enter your e-Mail..." type="text">-->
+                                <select class="form-control">
+                                    <option class='option' *ngFor='let role of roles' [value]="role">{{role}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label class="form-label">Username</label>
                                 <input class="form-control" placeholder="Enter your Username..." type="text">
                             </div>
