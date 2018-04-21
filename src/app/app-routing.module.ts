@@ -6,7 +6,7 @@ import { ChangelogComponent } from '@core/components/changelog/changelog.compone
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: 'dashboard', loadChildren: '@dashboard/dashboard.module#DashboardModule', pathMatch: 'full' },
   { path: 'ranked', loadChildren: '@ranked/ranked.module#RankedModule', pathMatch: 'full' },
   { path: 'vod', loadChildren: '@vod/vod.module#VodModule', pathMatch: 'full' },
