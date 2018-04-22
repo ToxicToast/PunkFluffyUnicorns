@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { Store } from '@ngrx/store';
+
+import * as fromAuth from '@auth/reducers/auth.reducer';
+import * as auth from '@auth/actions/auth.actions';
 
 @Component({
   selector: 'app-auth-container',
@@ -13,10 +18,15 @@ export class AuthContainerComponent implements OnInit {
   isLogin = false;
   isLostPassword = false;
 
+  register$: Observable<any>;
+
   constructor(
     private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    private router: Router,
+    private store: Store<fromAuth.State>
+  ) {
+    this.register$ = this.store.select(fromAuth.getRegisterState);
+  }
 
   ngOnInit() {
     this.getRouteData();
@@ -30,6 +40,10 @@ export class AuthContainerComponent implements OnInit {
   goToLogin() {
     const url = '/auth';
     this.router.navigate([url]);
+  }
+
+  registerUser(data) {
+    this.store.dispatch(new auth.RegisterUser(data));
   }
 
   private getRouteData() {

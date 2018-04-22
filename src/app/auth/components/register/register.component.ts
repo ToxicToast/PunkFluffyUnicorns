@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { OverwatchRoles } from '@core/helpers/Roles';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators, ValidationErrors } from '@angular/forms';
+
 
 @Component({
   selector: 'app-register',
@@ -12,27 +13,33 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   roles = [];
   @Output() goToLogin = new EventEmitter<void>();
+  @Output() registerUser = new EventEmitter<any>();
+  @Input() state: any;
 
   constructor(
     private fb: FormBuilder
-  ) {
-    this.createForm();
-  }
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.createForm();
     this.roles.push(OverwatchRoles.ROLE_DPS);
     this.roles.push(OverwatchRoles.ROLE_FLEX);
     this.roles.push(OverwatchRoles.ROLE_SUPPORT);
     this.roles.push(OverwatchRoles.ROLE_TANK);
   }
 
-  private createForm() {
+  private createForm(): void {
     this.registerForm = this.fb.group({
-      player_roles: ['', Validators.required],
-      username: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      player_roles: [null, Validators.required],
+      username: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, Validators.required],
     });
   }
 
+  userRegister(): void {
+    const { value } = this.registerForm;
+    this.registerUser.emit(value);
+    this.registerForm.reset();
+  }
 }

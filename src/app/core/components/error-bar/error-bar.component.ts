@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ErrorBarComponent implements OnInit {
 
   @Input() message: string = 'Something went wrong!';
+  @Input() title: string = 'Error';
 
   constructor() { }
 
