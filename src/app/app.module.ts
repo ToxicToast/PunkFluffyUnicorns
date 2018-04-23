@@ -25,7 +25,6 @@ import { CoreModule } from '@core/core.module';
 import { RankedModule } from '@ranked/ranked.module';
 import { VodModule } from '@vod/vod.module';
 import { GuidesModule } from '@guides/guides.module';
-import { AuthModule } from '@auth/auth.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -72,7 +71,6 @@ const graphqlEndpoint = 'https://backend.toxictoast.de/graphql';
     RankedModule,
     VodModule,
     GuidesModule,
-    AuthModule,
     NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],

@@ -6,13 +6,12 @@ import { ChangelogComponent } from '@core/components/changelog/changelog.compone
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', loadChildren: '@dashboard/dashboard.module#DashboardModule', pathMatch: 'full' },
   { path: 'ranked', loadChildren: '@ranked/ranked.module#RankedModule', pathMatch: 'full' },
   { path: 'vod', loadChildren: '@vod/vod.module#VodModule', pathMatch: 'full' },
   { path: 'guides', loadChildren: '@guides/guides.module#GuidesModule', pathMatch: 'full' },
   { path: 'news', loadChildren: '@news/news.module#NewsModule', pathMatch: 'full' },
-  { path: 'auth', loadChildren: '@auth/auth.module#AuthModule', pathMatch: 'full' },
   { path: 'changelog', component: ChangelogComponent, pathMatch: 'full' },
   { path: 'maintenance', component: MaintenanceComponent, pathMatch: 'full' }
 ];
