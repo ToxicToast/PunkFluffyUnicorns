@@ -114,7 +114,9 @@ export class RankingListComponent implements OnInit {
       allRanking += Number(player.player_ranking);
     });
     average = allRanking / players;
-    if (average >= ranking) {
+    const averageString = Number(average).toFixed(0);
+    const averageInt = +averageString;
+    if (averageInt > ranking) {
       return true;
     } else {
       return false;
