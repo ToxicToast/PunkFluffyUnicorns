@@ -1,3 +1,0 @@
-<app-register *ngIf="isRegister" (goToLogin)="goToLogin()" (registerUser)="registerUser($event)" [state]="register$ | async"></app-register>
-<app-login *ngIf="isLogin" (goToRegister)="goToRegister()"></app-login>
-<app-login *ngIf="isLostPassword"></app-login>
