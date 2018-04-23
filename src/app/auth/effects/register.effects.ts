@@ -29,10 +29,17 @@ export class RegisterEffects {
   @Effect()
   registerUser$ = this.actions.ofType(AuthActionTypes.REGISTER_USER)
     .switchMap(payload => this.service.userRegister(payload)
-      .map(data => new RegisterUserSuccess(data))
+      .map(data => this.registerSuccess(data))
       .catch(err => {
         this.toastr.showError('Failed registering User');
         return of(new RegisterUserFailure());
       }));
+
+  private registerSuccess(data) {
+    const { payload } = data;
+    const { username } = payload;
+    this.toastr.showSuccess('Successfully registered User - Welcome ' + username);
+    return new RegisterUserSuccess(data);
+  }
 
 }
