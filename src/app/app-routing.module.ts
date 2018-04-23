@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'vod', loadChildren: '@vod/vod.module#VodModule', pathMatch: 'full' },
   { path: 'guides', loadChildren: '@guides/guides.module#GuidesModule', pathMatch: 'full' },
   { path: 'news', loadChildren: '@news/news.module#NewsModule', pathMatch: 'full' },
+  { path: 'matches', loadChildren: '@matches/matches.module#MatchesModule', pathMatch: 'full' },
   { path: 'changelog', component: ChangelogComponent, pathMatch: 'full' },
   { path: 'maintenance', component: MaintenanceComponent, pathMatch: 'full' }
 ];

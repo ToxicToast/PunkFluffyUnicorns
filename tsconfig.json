@@ -27,7 +27,7 @@
       "@ranked/*": ["app/ranked/*"],
       "@vod/*": ["app/vod/*"],
       "@guides/*": ["app/guides/*"],
-      "@auth/*": ["app/auth/*"],
+      "@matches/*": ["app/matches/*"],
     }
   }
 }
