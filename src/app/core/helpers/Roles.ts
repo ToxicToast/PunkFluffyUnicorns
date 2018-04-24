@@ -4,7 +4,8 @@ export enum OverwatchRoles {
   ROLE_DEFENSE = 'Defense',
   ROLE_SUPPORT = 'Support',
   ROLE_TANK = 'Tank',
-  ROLE_DPS = 'DPS'
+  ROLE_DPS = 'DPS',
+  ROLE_COACH = 'Coach'
 }
 
 export class Roles {
@@ -26,6 +27,9 @@ export class Roles {
     }
     if (name === 'BeLoor' || name === 'Anti') {
       return this.setCustomRole(`${OverwatchRoles.ROLE_FLEX}`);
+    }
+    if (name === 'Silence') {
+      return this.setCustomRole(`${OverwatchRoles.ROLE_COACH}`);
     }
     const roles = [];
     champions.forEach(champion => {
