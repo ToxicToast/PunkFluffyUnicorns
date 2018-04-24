@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatchesRoutingModule } from './matches-routing.module';
+import { MatchesRoutingModule } from '@matches/matches-routing.module';
+import { MatchIndexContainerComponent } from '@matches/containers/match-index-container/match-index-container.component';
 
 @NgModule({
   imports: [
     CommonModule,
     MatchesRoutingModule
   ],
-  declarations: []
+  declarations: [
+    MatchIndexContainerComponent
+  ]
 })
 export class MatchesModule { }
