@@ -41,6 +41,7 @@ import { DashboardEffects } from '@dashboard/effects/dashboard.effects';
 import { RankingEffects } from '@ranked/effects/ranking.effects';
 import { VodsEffects } from '@vod/effects/vods.effects';
 import { GuidesEffects } from '@guides/effects/guides.effects';
+import { NewsEffects } from '@news/effects/news.effects';
 
 
 const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument() : [];
@@ -59,7 +60,7 @@ const graphqlEndpoint = 'https://backend.toxictoast.de/graphql';
     RouterModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
-    EffectsModule.forRoot([ DashboardEffects, RankingEffects, VodsEffects, GuidesEffects]),
+    EffectsModule.forRoot([ DashboardEffects, RankingEffects, VodsEffects, GuidesEffects, NewsEffects]),
     StoreDevTools,
     ReactiveFormsModule,
     HttpClientModule,

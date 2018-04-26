@@ -15,6 +15,9 @@ import * as videos from '@vod/actions/vod.actions';
 //
 import * as fromGuides from '@guides/reducers/guides.reducer';
 import * as guides from '@guides/actions/guides.actions';
+//
+import * as fromNews from '@news/reducers/news.reducer';
+import * as news from '@news/actions/news.actions';
 
 
 @Component({
@@ -31,6 +34,7 @@ export class AppComponent {
     private rankedStore: Store<fromRanked.State>,
     private vodStore: Store<fromVods.State>,
     private guidesStore: Store<fromGuides.State>,
+    private newsStore: Store<fromNews.State>,
     private router: Router
   ) {
     // console.log('configured routes: ', this.router.config);
@@ -40,6 +44,7 @@ export class AppComponent {
     this.dispatchRanked();
     this.dispatchVod();
     this.dispatchGuides();
+    this.dispatchNews();
   }
 
   private dispatchDashboard() {
@@ -56,6 +61,10 @@ export class AppComponent {
 
   private dispatchGuides() {
     this.vodStore.dispatch(new guides.LoadGuides());
+  }
+
+  private dispatchNews() {
+    this.newsStore.dispatch(new news.LoadNews());
   }
 
   private maintenanceRedirect() {
