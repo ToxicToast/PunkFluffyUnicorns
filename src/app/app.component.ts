@@ -79,10 +79,7 @@ export class AppComponent {
 
   private countVisitors() {
     this.counter.getData().subscribe(data => {
-      console.error(data);
-      this.counter.setVisitor(data).subscribe(model => {
-        console.error(model);
-      });
+      this.counter.setVisitor(data).subscribe();
     });
   }
 
