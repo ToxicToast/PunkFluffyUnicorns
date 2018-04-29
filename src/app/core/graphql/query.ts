@@ -7,7 +7,7 @@ export const createVisitor = `mutation {
     id
     ip
     country
-    city,
+    city
     useragent
     platform
   }
