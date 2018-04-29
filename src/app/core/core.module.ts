@@ -7,6 +7,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { OverwatchService } from '@core/services/overwatch.service';
 import { ToastService } from '@core/services/toast.service';
+import { CounterService } from '@core/services/counter.service';
 
 import { LoadingBarComponent } from '@core/components/loading-bar/loading-bar.component';
 import { MaintenanceComponent } from '@core/components/maintenance/maintenance.component';
@@ -65,6 +66,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   providers: [
     OverwatchService,
     ToastService,
+    CounterService
   ]
 })
 export class CoreModule { }

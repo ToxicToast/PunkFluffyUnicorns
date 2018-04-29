@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Route, ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { environment } from '@env/environment';
+import { CounterService } from '@core/services/counter.service';
+
 
 import { Store } from '@ngrx/store';
 
@@ -19,7 +21,6 @@ import * as guides from '@guides/actions/guides.actions';
 import * as fromNews from '@news/reducers/news.reducer';
 import * as news from '@news/actions/news.actions';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -35,7 +36,8 @@ export class AppComponent {
     private vodStore: Store<fromVods.State>,
     private guidesStore: Store<fromGuides.State>,
     private newsStore: Store<fromNews.State>,
-    private router: Router
+    private router: Router,
+    private counter: CounterService
   ) {
     // console.log('configured routes: ', this.router.config);
     //
@@ -45,6 +47,7 @@ export class AppComponent {
     this.dispatchVod();
     this.dispatchGuides();
     this.dispatchNews();
+    this.countVisitors();
   }
 
   private dispatchDashboard() {
@@ -72,6 +75,12 @@ export class AppComponent {
     if (maintenance === 1) {
       this.router.navigate(['/maintenance']);
     }
+  }
+
+  private countVisitors() {
+    this.counter.getData().subscribe(data => {
+      this.counter.setVisitor(data);
+    });
   }
 
 }
