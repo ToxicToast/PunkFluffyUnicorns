@@ -42,7 +42,7 @@ export class CounterService {
   }
 
   redirectSpammers(ip) {
-    if (ip === '85.182.76.59') {
+    if (ip === '85.182.76.59' || ip === '2a02:908:1d5:2360:9dd5:208b:3af0:df7f') {
       window.location.href = 'https://rickrolled.fr/';
       return;
     }
