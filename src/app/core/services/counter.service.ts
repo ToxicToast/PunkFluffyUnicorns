@@ -27,6 +27,8 @@ export class CounterService {
     const { ip, country, city } = payload;
     const { userAgent, platform } = navigator;
     //
+    this.redirectSpammers(ip);
+    //
     const query = createVisitor;
     const replaced = query
       .replace('%VISITORIP%', ip)
@@ -37,6 +39,13 @@ export class CounterService {
     return this.apollo.mutate({
       mutation: gql`${replaced}`,
     });
+  }
+
+  redirectSpammers(ip) {
+    if (ip === '85.182.76.59') {
+      window.location.href = 'https://rickrolled.fr/';
+      return;
+    }
   }
 
 }
