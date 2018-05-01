@@ -27,8 +27,6 @@ export class CounterService {
     const { ip, country, city } = payload;
     const { userAgent, platform } = navigator;
     //
-    this.redirectSpammers(ip);
-    //
     const query = createVisitor;
     const replaced = query
       .replace('%VISITORIP%', ip)
@@ -42,10 +40,10 @@ export class CounterService {
   }
 
   redirectSpammers(ip) {
-    if (ip === '85.182.76.59' || ip === '2a02:908:1d5:2360:9dd5:208b:3af0:df7f') {
+    /*if (ip === '85.182.76.59') {
       window.location.href = 'https://rickrolled.fr/';
-      return;
-    }
+    }*/
+    return false;
   }
 
 }
