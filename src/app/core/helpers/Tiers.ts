@@ -42,8 +42,9 @@ export class Tiers {
 
   setTier(): void {
     if (this.ranking < 1) {
-      this.tier = OverwatchTiers.TIER_UNRANKED;
-      this.needed = 1 - this.ranking;
+      this.currentTier = OverwatchTiers.TIER_UNRANKED;
+      this.tier = OverwatchTiers.TIER_BRONZE;
+      this.needed = 1;
     }
     if (this.ranking >= 1 && this.ranking <= 1499) {
       this.currentTier = OverwatchTiers.TIER_BRONZE;
