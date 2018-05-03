@@ -16,7 +16,7 @@ export class Roles {
   constructor() { }
 
   setMainRole(name: string, champions: any): string {
-    if (name === 'ToxicToast') {
+    /*if (name === 'ToxicToast') {
       return this.setCustomRole(`${OverwatchRoles.ROLE_DPS}`);
     }
     if (name === 'DragonMG' || name === 'HanterGER') {
@@ -30,7 +30,7 @@ export class Roles {
     }
     if (name === 'Silence') {
       return this.setCustomRole(`${OverwatchRoles.ROLE_COACH}`);
-    }
+    }*/
     const roles = [];
     champions.forEach(champion => {
       if (champion.character_time > 0) {
