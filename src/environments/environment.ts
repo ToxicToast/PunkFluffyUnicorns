@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   baseUrl: 'http://toxicblog.local',
-  maintenance: 1
+  maintenance: 0
 };

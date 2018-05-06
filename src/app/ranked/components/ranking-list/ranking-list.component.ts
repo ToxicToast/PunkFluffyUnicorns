@@ -18,6 +18,11 @@ export class RankingListComponent implements OnInit {
 
   ngOnInit() { }
 
+  showPlayerTier(tier): boolean {
+    const tierState = this.service.setRealTier(tier, tier);
+    return tierState !== 'unranked';
+  }
+
   getPlayerTier(tier: string, shouldTier: string): string {
     const tierState = this.service.setRealTier(tier, shouldTier);
     return `/assets/ranks/${tierState}.png`;
