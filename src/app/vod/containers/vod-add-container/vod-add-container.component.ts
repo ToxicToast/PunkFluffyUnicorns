@@ -7,10 +7,13 @@ import { Store } from '@ngrx/store';
 import * as fromVods from '@vod/reducers/vod.reducer';
 import * as vods from '@vod/actions/vod.actions';
 
+import { fadeAnimation } from '@core/helpers/Animation';
+
 @Component({
   selector: 'app-vod-add-container',
   templateUrl: './vod-add-container.component.html',
-  styleUrls: ['./vod-add-container.component.scss']
+  styleUrls: ['./vod-add-container.component.scss'],
+  animations: [fadeAnimation]
 })
 export class VodAddContainerComponent implements OnInit {
 

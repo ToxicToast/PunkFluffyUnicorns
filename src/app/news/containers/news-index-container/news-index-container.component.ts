@@ -6,11 +6,13 @@ import { Store } from '@ngrx/store';
 
 import * as fromNews from '@news/reducers/news.reducer';
 
+import { fadeAnimation } from '@core/helpers/Animation';
 
 @Component({
   selector: 'app-news-index-container',
   templateUrl: './news-index-container.component.html',
-  styleUrls: ['./news-index-container.component.scss']
+  styleUrls: ['./news-index-container.component.scss'],
+  animations: [fadeAnimation]
 })
 export class NewsIndexContainerComponent implements OnInit {
 

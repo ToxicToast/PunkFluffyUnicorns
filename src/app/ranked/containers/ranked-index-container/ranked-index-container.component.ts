@@ -7,10 +7,13 @@ import { Store } from '@ngrx/store';
 import * as fromRanked from '@ranked/reducers/ranked.reducer';
 import * as ranking from '@ranked/actions/ranking.actions';
 
+import { fadeAnimation } from '@core/helpers/Animation';
+
 @Component({
   selector: 'app-ranked-index-container',
   templateUrl: './ranked-index-container.component.html',
-  styleUrls: ['./ranked-index-container.component.scss']
+  styleUrls: ['./ranked-index-container.component.scss'],
+  animations: [fadeAnimation]
 })
 export class RankedIndexContainerComponent implements OnInit {
 

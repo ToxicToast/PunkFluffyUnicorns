@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Route, ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { environment } from '@env/environment';
 import { CounterService } from '@core/services/counter.service';
+import { fadeAnimation } from '@core/helpers/Animation';
 
 
 import { Store } from '@ngrx/store';
@@ -24,7 +25,8 @@ import * as news from '@news/actions/news.actions';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [fadeAnimation]
 })
 export class AppComponent {
 
@@ -47,7 +49,13 @@ export class AppComponent {
     this.dispatchVod();
     this.dispatchGuides();
     this.dispatchNews();
-    this.countVisitors();
+    if (environment.production) {
+      this.countVisitors();
+    }
+  }
+
+  public getRouterOutletState(outlet) {
+    return outlet.isActivated ? outlet.activatedRoute : '';
   }
 
   private dispatchDashboard() {

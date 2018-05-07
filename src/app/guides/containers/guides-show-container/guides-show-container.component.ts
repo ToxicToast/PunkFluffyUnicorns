@@ -7,10 +7,13 @@ import { Store } from '@ngrx/store';
 import * as fromGuides from '@guides/reducers/guides.reducer';
 import * as guides from '@guides/actions/guides.actions';
 
+import { fadeAnimation } from '@core/helpers/Animation';
+
 @Component({
   selector: 'app-guides-show-container',
   templateUrl: './guides-show-container.component.html',
-  styleUrls: ['./guides-show-container.component.scss']
+  styleUrls: ['./guides-show-container.component.scss'],
+  animations: [fadeAnimation]
 })
 export class GuidesShowContainerComponent implements OnInit {
 
