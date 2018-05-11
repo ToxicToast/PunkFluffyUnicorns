@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VERSION } from '@env/version';
+import { VERSION } from 'environments/version';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +7,8 @@ import { VERSION } from '@env/version';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+  version = VERSION;
 
   constructor() { }
 
