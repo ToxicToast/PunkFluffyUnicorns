@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VERSION } from '@env/version';
 
 @Component({
   selector: 'app-header',
