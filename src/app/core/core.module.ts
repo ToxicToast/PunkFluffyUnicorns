@@ -25,6 +25,8 @@ import { BigNumbers } from '@core/pipes/bigNumbers.pipe';
 import { validateYoutubelink } from '@core/validators/youtubeLink.validator';
 import { ResponsiveNavigationComponent } from '@core/components/responsive-navigation/responsive-navigation.component';
 
+import { NbLayoutModule, NbSidebarModule, NbSidebarService  } from '@nebular/theme';
+
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -34,6 +36,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CommonModule,
     RouterModule,
     PerfectScrollbarModule,
+    NbLayoutModule,
+    NbSidebarModule
   ],
   declarations: [
     LoadingBarComponent,
@@ -66,7 +70,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   providers: [
     OverwatchService,
     ToastService,
-    CounterService
+    CounterService,
+    NbSidebarService
   ]
 })
 export class CoreModule { }

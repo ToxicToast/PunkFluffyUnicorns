@@ -1,6 +1,7 @@
 @import "~ngx-toastr/toastr.css";
 @import "prismjs/themes/prism.css";
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic');
+@import "@nebular/theme/styles/prebuilt/default.css";
 @keyframes anim-rotate {
     0% {
         transform: rotate(0);
@@ -29,16 +30,16 @@
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 router-outlet {
-  animation: fadeIne 2s;
+    animation: fadeIne 2s;
 }
 
 @import './characters';

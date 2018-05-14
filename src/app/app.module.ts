@@ -14,9 +14,10 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { AngularFireModule } from 'angularfire2';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { NbThemeModule } from '@nebular/theme';
+
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 
 import { NewsModule } from '@news/news.module';
@@ -76,6 +77,7 @@ const graphqlEndpoint = 'https://backend.toxictoast.de/graphql';
     MatchesModule,
     NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    NbThemeModule.forRoot({ name: 'default' })
   ],
   providers: [
     RouterProvider
