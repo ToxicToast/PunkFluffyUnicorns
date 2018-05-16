@@ -1,4 +1,5 @@
 <app-layout>
+    <app-warning-bar message="Achtung! Das Team ist momentan nicht in voller Besetzung und könnte noch einen Main-Tank gebrauchen. Ein Support (keine Mercy, da bereits vorhanden) wäre ebenfalls eine gute Teamergänzung." [@fadeAnimation]="true"></app-warning-bar>
     <app-team-stats [state]="dashboard$ | async" [@fadeAnimation]="true"></app-team-stats>
     <app-team-medals [state]="dashboard$ | async" [@fadeAnimation]="true"></app-team-medals>
     <app-team-kpd [state]="dashboard$ | async" [@fadeAnimation]="true"></app-team-kpd>
