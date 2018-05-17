@@ -1,4 +1,6 @@
 <app-layout>
+    <app-warning-bar message="Achtung! Das Team ist momentan nicht in voller Besetzung und könnte noch einen Main-Tank gebrauchen. Ein Support (keine Mercy, da bereits vorhanden) wäre ebenfalls eine gute Teamergänzung." [@fadeAnimation]="true"></app-warning-bar>
+    <br>
     <!--<app-warning-bar [message]="'Season 10 has begun! - This is the current Ranked List NOT the Roster'" [@fadeAnimation]="true"></app-warning-bar><br>-->
     <app-ranking-list [state]="rankings$ | async" (switchPlayer)="switchToPlayer($event)" [@fadeAnimation]="true"></app-ranking-list>
 </app-layout>
