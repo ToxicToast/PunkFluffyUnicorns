@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   baseUrl: 'https://backend.toxictoast.de',
-  maintenance: 0
+  maintenance: 1
 };
