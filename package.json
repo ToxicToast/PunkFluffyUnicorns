@@ -5,12 +5,14 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build": "ng build --prod --aot --no-progress",
-        "test": "ng test",
+        "build": "ng build --prod --aot --output-hashing=all --extract-css=true --named-chunks=false --build-optimizer --vendor-chunk --no-progress",
+        "test": "ng test --browser ChromeHeadless --single-run",
         "lint": "ng lint",
         "e2e": "ng e2e",
         "deploy": "firebase deploy",
-        "postinstall": "node src/version.js"
+        "postinstall": "node src/version.js",
+        "version": "standard-version",
+        "publish": "git push --follow-tags origin master"
     },
     "private": true,
     "dependencies": {
