@@ -13,7 +13,8 @@ export const fetchDashboard = `query fetchDashboard {
     player_kills
     player_deaths,
     player_healing_done,
-    player_damage_done
+    player_damage_done,
+    private,
 		trends {
       player_id
     	player_ranking

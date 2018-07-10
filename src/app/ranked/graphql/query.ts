@@ -10,7 +10,8 @@ export const fetchPlayers = `query fetchRanking {
     player_games_total
     player_games_won
     player_games_lose
-    player_games_draw
+    player_games_draw,
+    private,
     playtime {
       player_id
       character_name
@@ -40,7 +41,8 @@ export const fetchPlayerProfile = `query fetchRanking {
     player_games_total
     player_games_won
     player_games_lose
-    player_games_draw
+    player_games_draw,
+    private,
     playtime {
       player_id
       character_name
