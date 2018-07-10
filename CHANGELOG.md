@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.16"></a>
+## [1.2.16](https://github.com/ToxicToast/PunkFluffyUnicorns/compare/v1.2.15...v1.2.16) (2018-07-10)
+
+
+
 <a name="1.2.15"></a>
 ## [1.2.15](https://github.com/ToxicToast/PunkFluffyUnicorns/compare/v1.2.14...v1.2.15) (2018-07-10)
 
