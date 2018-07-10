@@ -10,4 +10,5 @@ export interface RankingModel {
   player_games_lose: number;
   player_games_draw: number;
   playtime: PlaytimeModel[];
+  private?: number;
 }
