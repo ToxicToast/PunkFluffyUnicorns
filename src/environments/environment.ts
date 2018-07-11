@@ -5,6 +5,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://toxicblog.local',
+  // baseUrl: 'http://toxicblog.local',
+  baseUrl: 'https://backend.toxictoast.de',
   maintenance: 0
 };
